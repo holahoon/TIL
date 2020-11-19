@@ -4,7 +4,7 @@
 
 ##### Because we often forget what we learned 
 
-![Alt Text](../TIL/assets/thanks_brain.gif "Thanks, brain")
+![Alt Text](./assets/thanks_brain.gif "Thanks, brain")
 ----------------------------------------------------------------------------------------------------------------------
 
 ## Front End
