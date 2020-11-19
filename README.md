@@ -4,9 +4,18 @@
 > Because we often forget what we learned 
 
 ![Alt Text](./assets/thanks_brain.gif "Thanks, brain")
-----------------------------------------------------------------------------------------------------------------------
+---
 
-## Front End
+## Categories 📝
+
+* [JavaScript](#JavaScript)
+* [React](#React)
+* [Redux](#Redux)
+* [Git](#Git)
+
+---
+
+## Front End 🙌
 
 ### JavaScript
 
@@ -15,3 +24,18 @@
 ### React
 
 ### Redux
+
+## Tools
+
+### Git
+
+
+## TIL References
+thanks to
+* [@aweekj](https://github.com/aweekj/TIL)
+
+## License
+
+© 2020 David Kim
+
+This repository is licensed under the MIT license. See [`LICENSE`](./LICENSE) for details.
