@@ -9,6 +9,7 @@
 ## Categories 📝
 
 * [JavaScript](#JavaScript)
+* [TypeScript](#TypeScript)
 * [React](#React)
 * [Redux](#Redux)
 * [Git](#Git)
@@ -21,6 +22,10 @@
 ### JavaScript
 
 * [firstJS sample](./JavaScript/firstJS.md)
+
+### TypeScript
+
+* [What is TS?](./TypeScript/whatIsTS.md)
 
 ### React
 
