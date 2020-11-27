@@ -11,7 +11,7 @@
 ### Using it inside component function & `useState` hook
 
 ##### [ App.tsx ]
-```jsx
+```tsx
 import { TextField } from "./TextField";
 
 const App: React.FC = () => {
@@ -32,7 +32,7 @@ export default App;
 ```
 
 ##### [ TextField.tsx ]
-```jsx
+```tsx
 import { useState } from "react";
 
 interface Person {
@@ -73,7 +73,7 @@ export const TextField: React.FC<Props> = ({ person }) => {
 
 ### Using it inside `useRef` hook
 
-```jsx
+```tsx
 interface Props {
   handleChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
@@ -98,7 +98,8 @@ export const TextField: React.FC<Props> = ({ handleChange }) => {
 
 ### Using it inside `useReducer` hook
 
-```jsx
+##### [ UseReducerExample.tsx ]
+```tsx
 import { useReducer } from "react";
 
 type Actions =
@@ -144,3 +145,90 @@ export const ReducerExample: React.FC = () => {
 - `type State = Todo[]` 은 array를 생성한다. Array 만드는 다른 방법으론 `Array<Todo>`도 있다. So, in the above example, I am storing an array of todos.
 
 ### Render props
+
+새로운 파일을 만든다.
+##### [ Counter.tsx ]
+```tsx
+import { useState } from "react";
+
+interface CounterProps {
+//   children: (
+//     count: number,
+//     setCount: React.Dispatch<React.SetStateAction<number>>
+//   ) => JSX.Element | null;
+  children: (data: {
+    count: number;
+    setCount: React.Dispatch<React.SetStateAction<number>>;
+  }) => JSX.Element | null;
+}
+
+export const Counter: React.FC<CounterProps> = ({ children }) => {
+  const [count, setCount] = useState(0);
+//   return <div>{children(count, setCount)}</div>;
+  return <div>{children({ count, setCount })}</div>;
+};
+```
+
+위 예제와 같이 `setCount`라는 상태를 업데이트 해주는 메소드는 어떻게 타입을 알 수 있을까? 이것도 간단하다. `setCount`에 마우스를 갖다 대기만 하면 아주 읽기 좋은 💡Hint 가 뙇 나온다. setCount는 JSX element 를 리턴해주거나 null을 리턴하기 때문에 위와같이 함수 타입이 되는거다.
+- 주석 처리된 방식으로도 작성할 수 있지만 좀더 precise 하게 data 라고 이름 짓고 그 `data` 객체 안에 넣는 방식이다. 물론 밑에 destructuring 되있다.
+  
+이제 새로 작성한 App.tsx 파일을 보자.
+##### [ App.tsx ]
+```tsx
+import { Counter } from "./Counter";
+
+const App: React.FC = () => {
+  return (
+    <div>
+      <Counter>
+        {({ count, setCount }) => (
+          <div>
+            {count}
+            <button onClick={() => setCount(count + 1)}>+</button>
+          </div>
+        )}
+      </Counter>
+    </div>
+  );
+};
+
+export default App;
+```
+
+위 예제도 `count` 와 `setCount`는 destructuring 이 되있다.
+
+개인적으로 한번 연습해봤다.
+```tsx
+import { Counter } from "./Counter";
+
+const App: React.FC = () => {
+  const handleLogic = (
+    state: number,
+    callback: (value: React.SetStateAction<number>) => void,
+    operator: string
+  ) => {
+    operator === "-" ? callback(state - 1) : callback(state + 1);
+  };
+
+  return (
+    <div>
+      <Counter>
+        {({ count, setCount }) => (
+          <div>
+            <button onClick={() => handleLogic(count, setCount, "-")}>-</button>
+            {count}
+            <button onClick={() => handleLogic(count, setCount, "+")}>+</button>
+          </div>
+        )}
+      </Counter>
+    </div>
+  );
+};
+
+export default App;
+
+```
+
+handleLogic 이라는 함수를 만들고 파라미터 안에 `count`가 들어갈 `state`, `setCount`가 들어갈 `callback`, 또 `연산자`가 들어갈 `operator`를 지정해준다. 밑에 onClick 리스너에 wrapper 에서 받은 `count`, `setCount`, 그리고 원하는 `연산자`를 인자에 넣어준다.
+
+**이런식으로 하니깐 작동이 아주 잘 된다 =)**

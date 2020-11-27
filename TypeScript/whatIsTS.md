@@ -7,3 +7,5 @@
 ### TypeScript types
 
 우리가 JavaScript 에서 흔하게 아는 타입은 string, number, boolean, object, array가 있다. 물론 더 있을 수 있겠지만 
+
+... More contents to come
