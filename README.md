@@ -26,7 +26,7 @@
 
 ### TypeScript
 
-* [What is TS?](./TypeScript/whatIsTS.md)
+* [Get Started with TS](./TypeScript/getStartedWithTS.md)
 * [React with TS](./TypeScript/reactWithTS.md)
 
 ### React
