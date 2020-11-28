@@ -27,7 +27,12 @@
 ### TypeScript
 
 * [Get Started with TS](./TypeScript/getStartedWithTS.md)
-* [React with TS](./TypeScript/reactWithTS.md)
+* **TypeScript with React**
+  * [React with TS](./TypeScript/reactWithTS.md)
+  * [React Functional Component with TS](./TypeScript/reactFunctionalComponentTS.md)
+  * [React useState with TS](./TypeScript/reactUseStateTS.md)
+  * [React useReucer with TS](./TypeScript/reactUseReducerTS.md)
+  * [React Context API with TS](./TypeScript/reactContextTS.md)
 
 ### React
 

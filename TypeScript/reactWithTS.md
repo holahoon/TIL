@@ -4,6 +4,15 @@
 
 그냥 타입스크립트를 사용할때엔 파일 익스텐션을 `.ts` 로 하지만 리액트에서 타입 스크립트를 사용할땐 `.jsx` 대신 `.tsx`로 한다.
 
+## Installation
+```bash
+npx create-react-app [app name] --template typescript
+# or
+yarn create react-app [app name] --template typescript
+```
+[Reference](https://create-react-app.dev/docs/adding-typescript/)
+
+
 ## Example to demonstrate how to use TS with React
 
 ---
