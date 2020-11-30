@@ -8,23 +8,26 @@
 
 ## Categories 📝
 
-* [JavaScript](#JavaScript)
-* [TypeScript](#TypeScript)
-* [React](#React)
-* [Redux](#Redux)
-* [Git](#Git)
-* [Web](#Web)
-* [CLI](#CLI)
+* **Front-end**
+  * [JavaScript](#JavaScript)
+  * [TypeScript](#TypeScript)
+  * [React](#React)
+  * [Redux](#Redux)
+* **Tools**
+  * [Git](#Git)
+  * [CLI](#CLI)
+* **General knowledge**
+  * [Web](#Web)
 
 ---
 
-## Front End 🙌
+## Front-end 🙌
 
-### JavaScript
+#### JavaScript
 
 * [firstJS sample](./JavaScript/firstJS.md)
 
-### TypeScript
+#### TypeScript
 
 * [Get Started with TS](./TypeScript/getStartedWithTS.md)
 * **TypeScript with React**
@@ -36,23 +39,23 @@
 * **TypeScript with Redux**
   * [TS with Redux](./TypeScript/reduxWithTS.md)
 
-### React
+#### React
 
-### Redux
+#### Redux
 
-## Tools
+## Tools 🔧
 
-### Git
+#### Git
 
-### CLI
+#### CLI
 
-### VSCode
+#### VSCode
 
 * [User Snippet](./VSCode/userSnippet.md)
 
-## General
+## General Knowledge 🧩
 
-### Web
+#### Web
 
 * [개발상식](./Web/webCommonSense.md)
 
