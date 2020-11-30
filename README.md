@@ -28,11 +28,13 @@
 
 * [Get Started with TS](./TypeScript/getStartedWithTS.md)
 * **TypeScript with React**
-  * [React with TS](./TypeScript/reactWithTS.md)
-  * [React Functional Component with TS](./TypeScript/reactFunctionalComponentTS.md)
-  * [React useState with TS](./TypeScript/reactUseStateTS.md)
-  * [React useReucer with TS](./TypeScript/reactUseReducerTS.md)
-  * [React Context API with TS](./TypeScript/reactContextTS.md)
+  * [TS with React](./TypeScript/reactWithTS.md)
+  * [TS with React Functional Component](./TypeScript/reactFunctionalComponentTS.md)
+  * [TS with React useState](./TypeScript/reactUseStateTS.md)
+  * [TS with React useReucer](./TypeScript/reactUseReducerTS.md)
+  * [TS with React Context API](./TypeScript/reactContextTS.md)
+* **TypeScript with Redux**
+  * [TS with Redux](./TypeScript/reduxWithTS.md)
 
 ### React
 
@@ -42,18 +44,17 @@
 
 ### Git
 
-### Web
-
-* [HTTP](./Web/HTTP.md)
-* [REST, RESTful](./Web/Rest.md)
-
 ### CLI
 
 ### VSCode
 
 * [User Snippet](./VSCode/userSnippet.md)
 
+## General
 
+### Web
+
+* [개발상식](./Web/webCommonSense.md)
 
 
 ## TIL References
