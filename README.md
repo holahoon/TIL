@@ -24,8 +24,8 @@
 ## Front-end 🙌
 
 #### JavaScript
-
-* [firstJS sample](./JavaScript/firstJS.md)
+* **JavaScript Knowledge**
+  * [JavaScript Common Sense](./JavaScript/javaScriptCommonSense.md)
 
 #### TypeScript
 
