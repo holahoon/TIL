@@ -2,14 +2,15 @@
 면접 볼때 아주 유용하게 쓰이는 지식들을 찾아보며 모아봤다.
 
 ## Categories
-  - [Categories](#categories)
   - [이벤트 루프(Event loop)](#이벤트-루프event-loop)
   - [동기(Synchronous) / 비동기(Asynchronous)](#동기synchronous--비동기asynchronous)
   - [호이스팅(Hositing)](#호이스팅hositing)
   - [스코프(Scope)](#스코프scope)
   - [클로저(Closure)](#클로저closure)
   - [this](#this-keyword)
-  - [화살표 함수(Arrow function)]()
+  - [화살표 함수(Arrow function)](#화살표-함수arrow-function)
+
+---
 
 ## 이벤트 루프(Event loop)
 
@@ -165,7 +166,7 @@ inner();
 > In the example, the lexical scope of innerFunc() consists of the scope of outerFunc().
 > Moreover, the innerFunc() is a closure because it captures the variable outerVar from the lexical scope.
 
-조금 번역 해보면 함수 스코프 안에서 위와 같이 `innerFunc()`의 함수가 `outerFunc()` 함수 안에 있는 `outerVar` 변수에 접근할 수 있는거다.
+조금 번역 해보면 `innerFunc()`의 렉시컬 스코프는 `outerFunc()`의 스코프를 가지고 있다. 위와 같이 `innerFunc()`의 함수가 `outerFunc()` 함수 안에 있는 `outerVar` 변수에 접근할 수 있는거다. 그리고  innerFunc()는 렉시컬 스코프에서 outerVar를 데려올 수 있기 때문에(?) 클로저다.
 
 reference: [JavaScript Scope](https://dmitripavlutin.com/javascript-scope/)
 
