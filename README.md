@@ -9,15 +9,16 @@
 ## Categories 📝
 
 * **Front-end**
-  * [JavaScript](#JavaScript)
-  * [TypeScript](#TypeScript)
-  * [React](#React)
-  * [Redux](#Redux)
+  * [JavaScript](#javascript)
+  * [TypeScript](#typescript)
+  * [React](#react)
+  * [Redux](#redux)
 * **Tools**
-  * [Git](#Git)
-  * [CLI](#CLI)
+  * [Git](#git)
+  * [CLI](#cli)
 * **General knowledge**
-  * [Web](#Web)
+  * [Front-end knowledge](#front-end-knowledge)
+  * [Web knowledge](#web-knoweldge)
 
 ---
 
@@ -25,19 +26,19 @@
 
 #### JavaScript
 * **JavaScript Knowledge**
-  * [JavaScript Common Sense](./JavaScript/javaScriptCommonSense.md)
+  * [JavaScript Common Sense](./front-end/JavaScript/javaScriptCommonSense.md)
 
 #### TypeScript
 
-* [Get Started with TS](./TypeScript/getStartedWithTS.md)
+* [Get Started with TS](./front-end/TypeScript/getStartedWithTS.md)
 * **TypeScript with React**
-  * [TS with React](./TypeScript/reactWithTS.md)
-  * [TS with React Functional Component](./TypeScript/reactFunctionalComponentTS.md)
-  * [TS with React useState](./TypeScript/reactUseStateTS.md)
-  * [TS with React useReucer](./TypeScript/reactUseReducerTS.md)
-  * [TS with React Context API](./TypeScript/reactContextTS.md)
+  * [TS with React](./front-end/TypeScript/reactWithTS.md)
+  * [TS with React Functional Component](./front-end/TypeScript/reactFunctionalComponentTS.md)
+  * [TS with React useState](./front-end/TypeScript/reactUseStateTS.md)
+  * [TS with React useReucer](./front-end/TypeScript/reactUseReducerTS.md)
+  * [TS with React Context API](./front-end/TypeScript/reactContextTS.md)
 * **TypeScript with Redux**
-  * [TS with Redux](./TypeScript/reduxWithTS.md)
+  * [TS with Redux](./front-end/TypeScript/reduxWithTS.md)
 
 #### React
 
@@ -51,13 +52,17 @@
 
 #### VSCode
 
-* [User Snippet](./VSCode/userSnippet.md)
+* [User Snippet](./tools/VSCode/userSnippet.md)
 
 ## General Knowledge 🧩
 
-#### Web
+#### Front-end Knowledge
 
-* [개발상식](./Web/webCommonSense.md)
+* [Front-end Common Sense](./general-knowledge/Front-end-knowledge/front-endCommonSense.md)
+
+#### Web Knoweldge
+
+* [Web Common Sense](./general-knowledge/Web-knowledge/webCommonSense.md)
 
 
 ## TIL References
