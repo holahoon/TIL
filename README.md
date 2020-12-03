@@ -19,6 +19,8 @@
 * **General knowledge**
   * [Front-end knowledge](#front-end-knowledge)
   * [Web knowledge](#web-knoweldge)
+* **Algorithm**
+  * [JavaScript Algorithm](#javascript-algorithm)
 
 ---
 
@@ -64,6 +66,11 @@
 
 * [Web Common Sense](./general-knowledge/Web-knowledge/webCommonSense.md)
 
+## Algorithm 🧑🏻‍💻
+
+#### JavaScript Algorithm
+
+* [JavaScript Algorithm](./algorithm/JavaScriptAlgorithm.md)
 
 ## TIL References
 thanks to
