@@ -19,6 +19,7 @@
 * **General knowledge**
   * [Front-end knowledge](#front-end-knowledge)
   * [Web knowledge](#web-knoweldge)
+  * [JavaScript knowledge](#javascript-knowledge)
 * **Algorithm**
   * [JavaScript Algorithm](#javascript-algorithm)
 
@@ -27,8 +28,6 @@
 ## Front-end 🙌
 
 #### JavaScript
-* **JavaScript Knowledge**
-  * [JavaScript Common Sense](./front-end/JavaScript/javaScriptCommonSense.md)
 
 #### TypeScript
 
@@ -62,9 +61,12 @@
 
 * [Front-end Common Sense](./general-knowledge/Front-end-knowledge/front-endCommonSense.md)
 
-#### Web Knoweldge
+#### Web Knowledge
 
 * [Web Common Sense](./general-knowledge/Web-knowledge/webCommonSense.md)
+
+#### JavaScript Knowledge
+* [JavaScript Common Sense](./general-knowledge/Front-end-knowledge/front-endCommonSense.md)
 
 ## Algorithm 🧑🏻‍💻
 
