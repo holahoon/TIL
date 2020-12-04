@@ -9,6 +9,10 @@
   - [클로저(Closure)](#클로저closure)
   - [this](#this-keyword)
   - [화살표 함수(Arrow function)](#화살표-함수arrow-function)
+  - [이벤트](#이벤트event)
+    - [이벤트 등록](#이벤트-등록event-registration)
+    - [이벤트 버블링](#이벤트-버블링event-bubbling)
+    - [이벤트 캡쳐](#이벤트-캡쳐event-capture)
 
 ---
 
@@ -295,5 +299,76 @@ obj.printName();
 > In classic function expressions, the this keyword is bound to different values based on the context in which it is called. With arrow functions however, this is lexically bound. It means that it usesthis from the code that contains the arrow function.
 
 reference: [es6 arrow functions](https://www.freecodecamp.org/news/when-and-why-you-should-use-es6-arrow-functions-and-when-you-shouldnt-3d851d7f0b26/)
+
+[To Top](#categories)
+
+## 이벤트(Event)
+
+### 이벤트 등록(Event Registration)
+이벤트 등록이란 웹 애플리케이션에서 사용자의 입력을 받기 위해 필요한 기능이다.
+```html
+<button>add one item</button>
+```
+```javascript
+var button = document.querySelector('button');
+button.addEventListener('click', addItem);
+
+function addItem(event) {
+	console.log(event);
+}
+```
+자, 그러면 브라우저는 어떻게 이벤트의 발생을 감지했을까? 두가지 방법이 있다. **이벤트 버블링**과 **이벤트 캡쳐**다.
+
+### 이벤트 버블링(Event Bubbling)
+```html
+<body>
+	<div class="one">
+		<div class="two">
+			<div class="three">
+			</div>
+		</div>
+	</div>
+</body>
+```
+```javascript
+var divs = document.querySelectorAll('div');
+divs.forEach(function(div) {
+	div.addEventListener('click', logEvent);
+});
+
+function logEvent(event) {
+	console.log(event.currentTarget.className);
+}
+```
+다음과 같은 코드가 있을때 `<div class="three"></div>` 엘리먼트를 클릭하게 되면 콘솔엔 다음과 같이 찍힌다
+```
+three
+two
+one
+```
+이유는 바로 **이벤트 버블링** 때문이다. 브라우저는 특정 화면 요소에서 이벤트가 발생했을때 그 이벤트를 화면 최상위에 있는 화면 요소까지 이벤트를 전파시킨다. 이같이 하위에서 상위 요소로 이벤트 전파 방식을 **이벤트 버블링**이라고 한다.
+
+### 이벤트 캡쳐(Event Capture)
+반대로 이벤트 캡쳐는 버블링과 반대 방향으로 진행되는 이벤트 전파 방식이다.
+```javascript
+var divs = document.querySelectorAll('div');
+divs.forEach(function(div) {
+	div.addEventListener('click', logEvent, {
+		capture: true // default value is false
+	});
+});
+
+function logEvent(event) {
+	console.log(event.currentTarget.className);
+}
+```
+아까와 동일하게 `<div class="three"></div>` 엘리먼트를 클릭하게 되면 콘솔엔 버블링과는 다르게 다음과 같이 찍힌다
+```
+one
+two
+three
+```
+
+reference: [event bubbling - captain pangyo](https://joshua1988.github.io/web-development/javascript/event-propagation-delegation/)
 
 [To Top](#categories)
