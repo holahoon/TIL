@@ -5,6 +5,7 @@
 
   - [브라우저 동작 원리](#브라우저-동작-원리)
   - [Document Object Model(DOM)](#document-object-modeldom)
+  - [렌더링 최적화 하기](#렌더링-최적화-하기---reflow-repaint-줄이기)
   - [CORS](#cors)
 
 ## 브라우저 동작 원리
@@ -20,6 +21,25 @@
 7. 화면에 실제 픽셀을 Paint한다.
 
 reference: [브라우저는 웹페이지를 어떻게](https://m.post.naver.com/viewer/postView.nhn?volumeNo=8431285&memberNo=34176766)
+
+## 렌더링 최적화 하기 - Reflow, Repaint 줄이기
+웹 성능을 최적화 하기 위해선 reflow와 repaint를 짚고 넘어가야한다.
+- Reflow: 렌더링 과정을 거친 뒤에 최종적으로 페이지가 그려진다고 해서 렌더링 과정이 다 끝난것이 아니다. 어떠한 액션이나 이벤트에 따라 html 요소의 크기나 위치등 레이아웃 수치를 수정하면 그에 영향을 받는 자식 노드나 부모 노드들을 포함하여 Layout 과정을 다시 수행하게 된다. 이렇게 되면 Render Tree와 각 요소들의 크기와 위치를 다시 계산하게 된다. 이러한 과정을 Reflow라고 한다. Reflow가 일어나는 대표적인 예는 아래와 같다.
+  - 페이지 초기 렌더링 시(최초 Layout 과정)
+  - 윈도우 리사이징 시 (Viewport 크기 변경시)
+  - 노드 추가 또는 제거
+  - 요소의 위치, 크기 변경 (left, top, margin, padding, border, width, height, 등..)
+  - 폰트 변경 과(텍스트 내용) 이미지 크기 변경(크기가 다른 이미지로 변경 시)
+- Repaint: Reflow만 수행되면 실제 화면에 반영되지 않는다. Render Tree를 다시 화면에 그려주는 과정이 필요합니다. 결국은 Paint 단계가 다시 수행되는 것이며 이를 Repaint 라고 한다. 하지만 무조건 Reflow가 일어나야 Repaint가 일어나는것은 아니다. background-color, visibility와 같이 레이아웃에는 영향을 주지 않는 스타일 속성이 변경되었을 때는 Reflow를 수행할 필요가 없기 때문에 Repaint만 수행하게 된다.
+
+그렇다면 어떻게 하면 렌더링을 최적화할 수 있을까?
+- 사용하지 않는 노드에선 visibility: hidden; 보단 display: none;을 사용하자
+- Reflow가 일어나는 속성을 사용하는 것 보단 Repaint가 일어나는 속성을 가급적 사용하자
+  - Reflow의 대표: position, width, height, border, font, overflow, ...
+  - Repaint의 대표: background, color, border-style, border-radius, outline, ...
+- 애니메이션이 많은 경우 absolute이나 fixed를 사용하여 주변에 영향받는 노드들을 줄일 수 있다. Fixed같이 영향을 받는 노드가 전혀 없는 경우 reflow과정이 전혀 필요없기 떄문에 repaint 연상비용만 든다. 애니메이션이 끝난경우 원상복구 시키는것도 도움된다.
+
+reference: [렌더링](https://boxfoxs.tistory.com/408)
 
 ## Document Object Model(DOM)
 

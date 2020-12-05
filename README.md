@@ -6,7 +6,7 @@
 ![Alt Text](./assets/thanks_brain.gif "Thanks, brain")
 ---
 
-## Categories 📝
+## 📝 Categories
 
 * **Front-end**
   * [JavaScript](#javascript)
@@ -25,9 +25,11 @@
 
 ---
 
-## Front-end 🙌
+## 🙌 Front-end
 
 #### JavaScript
+* **JavaScript object**
+  * [Ways to check if the property exists in an object](./front-end/JavaScript/PropertyInObject.md)
 
 #### TypeScript
 
@@ -45,7 +47,7 @@
 
 #### Redux
 
-## Tools 🔧
+## 🔧 Tools
 
 #### Git
 
@@ -55,7 +57,7 @@
 
 * [User Snippet](./tools/VSCode/userSnippet.md)
 
-## General Knowledge 🧩
+## 🧩 General Knowledge
 
 #### Front-end Knowledge
 
@@ -68,7 +70,7 @@
 #### JavaScript Knowledge
 * [JavaScript Common Sense](./general-knowledge/Front-end-knowledge/front-endCommonSense.md)
 
-## Algorithm 🧑🏻‍💻
+## 🧑🏻‍💻 Algorithm
 
 #### JavaScript Algorithm
 
