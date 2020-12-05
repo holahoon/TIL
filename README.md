@@ -28,8 +28,8 @@
 ## 🙌 Front-end
 
 #### JavaScript
-* **JavaScript object**
-  * [Ways to check if the property exists in an object](./front-end/JavaScript/PropertyInObject.md)
+* [Ways to check if the property exists in an object](./front-end/JavaScript/PropertyInObject.md)
+* [Shallow Copy & Deep copy](./front-end/JavaScript/ShallowAndDeepCopy.md)
 
 #### TypeScript
 
