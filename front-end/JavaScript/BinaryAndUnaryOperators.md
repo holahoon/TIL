@@ -56,3 +56,49 @@ console.log(-a); // -1
 console.log(+b); // 0
 ```
 
+## Compound Assignment Operators
+
+|       Name      |     Shorthand Operator  | Meaning |
+| --------------- | :---------------------: | :------------: |
+| Assignment |           `x = y`            |    `x = y`     |
+| Addition Assignment |     `x += y`        |   `x = x + y`  |
+| Subtraction Assignment | `x -= y`         |   `x = x - y`  |
+| Multiplication Assignment | `x *= y`      |   `x = x * y`  |
+| Division Assignment |     `x /= y`        |   `x = x / y`  |
+| Remainder Assignment |    `x %= y`        |   `x = x % y`  |
+| Exponential Assignment |  `x **= y`       |   `x = x ** y` |
+| Logical AND Assignment |  `x &&= y`       | `x && (x = y)` |
+| Logical OR Assignment | `x ||= y`     | `x || (x = y)` |
+| Logical [nullish](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing_operator) Assignment | `x ??= y`     | `x ?? (x = y)` |
+
+#### 예제.
+
+##### AND operator `&&`
+Takes two expressions on either side and if the operator on the left side is `true`, then the operator will assign it to whatever expression is on the right.
+```javascript
+let x = "hello";
+console.log(x); // "hello"
+
+x &&= 5;
+console.log(x); // 5
+
+let w = ""; // empty string is false in JS
+console.log(!!w); // false
+
+w && = "Did it change?";
+console.log(w); // "" 
+```
+
+##### OR operator `||`
+Takes two expressions on either side but will only assign if the expression on the left is `falsy`.
+```javascript
+let y = 0;
+console.log(!!y); // false
+
+y ||= "new value!"; 
+console.log(y); // "new value!" 
+
+y ||= 999;
+console.log(y); // 999
+```
+
