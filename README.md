@@ -41,8 +41,6 @@
   * [TS with React useState](./front-end/TypeScript/reactUseStateTS.md)
   * [TS with React useReucer](./front-end/TypeScript/reactUseReducerTS.md)
   * [TS with React Context API](./front-end/TypeScript/reactContextTS.md)
-* **TypeScript with Redux**
-  * [TS with Redux](./front-end/TypeScript/reduxWithTS.md)
 
 #### React
 
