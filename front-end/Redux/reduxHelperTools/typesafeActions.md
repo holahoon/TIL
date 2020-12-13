@@ -11,6 +11,8 @@
 $ yarn add typesafe-actions
 ```
 
+
+## Example 1).
 #### pre-refactor
 ```typescript
 // * [ Action Types ] *
@@ -146,4 +148,131 @@ const counterReducer = createReducer<InitialCounterState, CounterAction>(
     count: state.count + action.payload,
   }));
 export default counterReducer;
+```
+
+## Example 2).
+```tsx
+import { ActionType, createReducer, createAction } from "typesafe-actions";
+```
+```tsx
+// * Actions Types *
+const ADD_TODO = "todos/ADD_TODO" as const;
+const TOGGLE_TODO = "todos/TOGGLE_TODO" as const;
+const REMOVE_TODO = "todos/REMOVE_TODO" as const;
+
+let nextId = 1; // 새로운 항목을 추가 할 때 사용할 고유 ID 값
+
+```
+
+#### Before typesafe-action
+```tsx
+// * Action Creators *
+export const addTodo = (text: string) => ({
+  type: ADD_TODO,
+  payload: {
+    id: nextId++,
+    text,
+  },
+});
+export const toggleTodo = (id: number) => ({
+  type: TOGGLE_TODO,
+  payload: id,
+});
+export const removeTodo = (id: number) => ({
+  type: REMOVE_TODO,
+  payload: id,
+});
+
+// * Types for all Action Creators *
+type TodosAction =
+  | ReturnType<typeof addTodo>
+  | ReturnType<typeof toggleTodo>
+  | ReturnType<typeof removeTodo>;
+
+// * Types for Todo Data *
+export type Todo = {
+  id: number;
+  text: string;
+  isDone: boolean;
+};
+
+// * Type for Initial State(above) *
+export type TodosState = Todo[];
+
+// * Initial State *
+const initialState: TodosState = [];
+
+// * Reducer *
+export default function todoReducer(
+  state: TodosState = initialState,
+  action: TodosAction
+): TodosState {
+  switch (action.type) {
+    case ADD_TODO:
+      return state.concat({
+        id: action.payload.id,
+        text: action.payload.text,
+        isDone: false,
+      });
+    case TOGGLE_TODO:
+      return state.map((todo) =>
+        todo.id === action.payload ? { ...todo, isDone: !todo.isDone } : todo
+      );
+    case REMOVE_TODO:
+      return state.filter((todo) => todo.id !== action.payload);
+    default:
+      return state;
+  }
+}
+
+```
+
+#### After typesafe-action
+> There's currently a syntax error in the reducer below by not using `createStandardAction` since it's been deprecated
+```tsx
+// * Action Creators *
+// 파라미터를 기반해서 커스터마이징된 payload를 설정해주기 떄문에 createAction 함수를 사용한다.
+export const addTodo = createAction(ADD_TODO, (action) => (text: string) =>
+  action({ id: nextId++, text })
+);
+export const toggleTodo = createAction(TOGGLE_TODO)<number>(); // payload가 그대로 들어감
+export const removeTodo = createAction(REMOVE_TODO)<number>();
+
+// * Types for all Action Creators *
+const actions = {
+  addTodo,
+  toggleTodo,
+  removeTodo,
+};
+type TodosAction = ActionType<typeof actions>;
+
+// * Types for Todo Data *
+export type Todo = {
+  id: number;
+  text: string;
+  isDone: boolean;
+};
+
+// * Type for Initial State(above) *
+export type TodosState = Todo[];
+
+// * Initial State *
+const initialState: TodosState = [];
+
+// * Reducer *
+const todoReducer = createReducer<TodosState, TodosAction>(initialState, {
+  [ADD_TODO]: (state, action) =>
+    state.concat({
+      ...action.payload, // id, text 를 이 안에 넣기
+      done: false,
+    }),
+  // destructuring으로 payload 값의 이름을 바꿀수 있다.
+  [TOGGLE_TODO]: (state, { payload: id }) =>
+    state.map((todo) =>
+      todo.id === id ? { ...todo, isDone: !todo.isDone } : todo
+    ),
+  [REMOVE_TODO]: (state, { payload: id }) =>
+    state.filter((todo) => todo.id !== id),
+});
+export default todoReducer;
 ```

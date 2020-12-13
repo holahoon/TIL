@@ -1,7 +1,7 @@
 # Today I Learned 
 
 > 오늘 배운 내용 직접 정리하여 모아두는 나만의 공간 by DK
-> Because we often forget what we learned 
+> Because we often forget what we learned, thanks to our brain XD
 
 ![Alt Text](./assets/thanks_brain.gif "Thanks, brain")
 ---
@@ -46,7 +46,7 @@
 
 #### Redux
 * **Redux helper tools**
-  * [Typesafe-actions](./front-end/Redux/reduxHelperTools/typesafeActions.md)
+  * [Typesafe-actions](./front-end/Redux/reduxHelperTools/typesafeActions.md) - action creator 와 reducer 를 좀더 쉽고 깔끔하게 작성 할 수 있게 해주는 라이브러리
 
 ## 🔧 Tools
 
@@ -54,8 +54,8 @@
 
 #### CLI
 
-* [Terminal Commands]()
-* [NVM](./tools/CLI/nvm.md)
+* [Terminal Commands](./tools/CLI/terminalCommands.md) - Terminal commands list
+* [NVM](./tools/CLI/nvm.md) - Node Version Manager
 
 #### VSCode
 
