@@ -45,6 +45,9 @@
 #### React
 
 #### Redux
+
+* **Redux Middleware**
+  * [redux-thunk]()
 * **Redux helper tools**
   * [Typesafe-actions](./front-end/Redux/reduxHelperTools/typesafeActions.md) - action creator 와 reducer 를 좀더 쉽고 깔끔하게 작성 할 수 있게 해주는 라이브러리
 
