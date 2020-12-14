@@ -1,5 +1,9 @@
 # Redux Middleware
 
+- [Getting Started](#getting-started)      
+- [redux-logger](#redux-logger)    
+- [Redux DevTools](#redux-devtools)
+
 미들웨어는 하나의 함수다. 함수를 연달아서 두번 리턴하는 함수.
 
 ```javascript
@@ -27,7 +31,7 @@ function middleware (store){
 
 예제. 리액트 컴포넌트는 사실 increase/decrease 해서 number 보여주는 컴포넌트는 쉽게 만들수 있으니 그 부분은 스킵하겠다.
 
-#### counter.js
+#### counter.js (redux module)
 먼저 아래와 같이 리덕스 파일을 만들어 준다.
 ```jsx
 // * Action Types *
@@ -110,3 +114,61 @@ ReactDOM.render(
 {type: "counter/DECREASE"}
 {counterReducer: 1}
 ```
+
+## redux-logger
+
+### Install [redux-logger](https://github.com/LogRocket/redux-logger)
+```sh
+$ yarn add redux-logger
+```
+
+```jsx
+import React from "react";
+import ReactDOM from "react-dom";
+import { combineReducers, createStore, applyMiddleware } from "redux";
+import { Provider } from "react-redux";
+import logger from "redux-logger";
+
+const store = createStore(rootReducer, applyMiddleware(logger)); // 여러개의 미들웨어를 받을수 있다.
+...
+```
+`myLogger`는 지우고 `logger`로 대체해보자. 이제 콘솔을 보면 아래와 같이 조금 더 예쁘게 나온걸 볼수 있다.
+```
+action counter/INCREASE @ 00:40:27.896
+  prev state {counterReducer: 0}
+  action     {type: "counter/INCREASE"}
+  next state {counterReducer: 1}
+```
+
+## Redux DevTools
+
+### Install [redux devtools](https://github.com/zalmoxisus/redux-devtools-extension)
+```sh
+$ yarn add redux-devtools-extension
+```
+
+```jsx
+import React from "react";
+import ReactDOM from "react-dom";
+import { combineReducers, createStore, applyMiddleware } from "redux";
+import { Provider } from "react-redux";
+import logger from "redux-logger";
+import { composeWithDevTools } from "redux-devtools-extension";
+
+import App from "./App";
+import counterReducer from "./modules/counter";
+
+// * Root Reducer *
+const rootReducer = combineReducers({
+  counterReducer,
+});
+
+const store = createStore(
+  rootReducer,
+  composeWithDevTools(applyMiddleware(logger))
+);
+
+ReactDOM.render(
+...
+```
+크롬을 주로 사용하니 크롬에 익스텐션을 설치해주면 아주 깔끔하게 볼수 있다.
