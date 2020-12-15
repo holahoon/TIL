@@ -288,6 +288,8 @@ export default function postsReducer(state = initialState, action) {
 
 일단, 위의 코드는 반복되는게 오지게 많으니 조금 리팩토링을 해주도록 하자.
 
+### refactor 1 -
+
 #### asyncUtils.js (utils)
 ```jsx
 // * Promise에 기반한 Thunk를 만들어주는 함수이다. *
@@ -361,6 +363,7 @@ export const getPostByIdAsync = createPromiseThunk(
 // initialState 쪽도 반복되는 코드를 initial() 함수를 사용해서 리팩토링 됬다.
 const initialState = {
   posts: reducerUtils.initial(),
+  post: reducerUtils.initial()
 };
 
 // * Reducer *
@@ -401,6 +404,166 @@ export default function postsReducer(state = initialState, action) {
   }
 }
 ```
+
+### refactor 2 -
+여기서 조금더 리팩토링을 하여 반복되는 코드를 줄이면 다음과 같이 할 수 있다. 아래 파일은 위에 있는 같은 asyncUtils.js 파일에 추가한 코드다.
+#### asyncUtils.js (utils)
+```jsx
+...
+// 비동기 관련 액션을을 처리하는 리듀서를 만들어준다.
+/**
+ * type: 액션의 타입
+ * key: 상태의 key (i.e. posts, post)
+ */
+export const handlAsyncActions = (type, key) => {
+  const [SUCCESS, FAIL] = [`${type}_SUCCESS`, `${type}_FAIL`];
+  return (state, action) => {
+    switch (action.type) {
+      case type:
+        return {
+          ...state,
+          [key]: reducerUtils.loading(),
+        };
+      case SUCCESS:
+        return {
+          ...state,
+          [key]: reducerUtils.success(action.payload),
+        };
+      case FAIL:
+        return {
+          ...state,
+          [key]: reducerUtils.fail(action.error),
+        };
+      default:
+        return state;
+    }
+  };
+};
+```
+
+#### posts.js (redux module) - after more refactor
+```jsx
+...
+// * Reducer *
+export default function postsReducer(state = initialState, action) {
+  switch (action.type) {
+    case GET_POSTS:
+    case GET_POSTS_SUCCESS:
+    case GET_POSTS_FAIL:
+      return handlAsyncActions(GET_POSTS, "posts")(state, action);
+
+    case GET_POST:
+    case GET_POST_SUCCESS:
+    case GET_POST_FAIL:
+      return handlAsyncActions(GET_POST, "post")(state, action);
+    default:
+      return state;
+  }
+}
+```
+위에 `return` 하는 함수가 살짝 헷갈리긴 하는데, 심히 간단하다. asyncUtils.js 파일 안에 `handlAsyncAction` 함수는 `type` 과 `key` 를 파라미터로 받아오는데 바로 위에 `GET_POST` 나 `'post'` 같은 녀석들을 받고, 그 함수는 또 다른 함수를 `return` 하는데 그 함수 역시 `state` 와 `action` 을 파라미터로 받는다. 저걸 조금 풀어 쓰면 다음과 같다.
+```jsx
+    ...
+    case GET_POST:
+    case GET_POST_SUCCESS:
+    case GET_POST_FAIL:
+      //   return handlAsyncActions(GET_POST, "post")(state, action);
+      const postReducer = handlAsyncActions(GET_POST, "post");
+      return postReducer(state, action);
+    default:
+```
+
+위와 같이 리덕스를 잘 짰으니 이제 리액트 컴포넌트를 만들어보자
+
+#### PostListContainer.js (container)
+```jsx
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+
+import { getPostsAsync } from "../modules/posts";
+
+export default function PostListContainer() {
+  const { data, loading, error } = useSelector(
+    (state) => state.postsReducer.posts
+  );
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getPostsAsync());
+  }, [dispatch]);
+
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>Error occurred!</div>;
+  if (!data) return null;
+
+  return (
+    <ul>
+      {data.map((post) => (
+        <li key={post.id}>{post.title}</li>
+      ))}
+    </ul>
+  );
+}
+```
+그리고 간단하게 pages라는 폴더를 만들고 그 안에 아래와 같이 프레젠테이셔널 컴포넌트를 넣자.
+#### PostListPage.js (pages/React component)
+```jsx
+import PostListContainer from "../containers/PostListContainer";
+
+export default function PostListPage() {
+  return <PostListContainer />;
+}
+```
+#### PostPage.js (pages/React component)
+```jsx
+import PostContainer from "../containers/PostContainer";
+
+export default function PostPage({ match }) {
+  const { id } = match.params;
+
+  return <PostContainer postId={+id} />;
+}
+```
+
+이제, react-router-dom 을 설치하고 아래와 같이 index와 App 컴포넌트에도 넣어주장.
+#### index.js (main)
+```jsx
+import React from "react";
+import ReactDOM from "react-dom";
+...
+import { BrowserRouter } from "react-router-dom";
+...
+ReactDOM.render(
+  <React.StrictMode>
+    <BrowserRouter>
+      <Provider store={store}>
+        <App />
+      </Provider>
+    </BrowserRouter>
+  </React.StrictMode>,
+  document.getElementById("root")
+);
+```
+#### App.js (main)
+```jsx
+import { Route } from "react-router-dom";
+
+import PostListPage from "./pages/PostListPage";
+import PostPage from "./pages/PostPage";
+
+function App() {
+  return (
+    <>
+      <Route path='/' component={PostListPage} />
+      <Route path='/:id' component={PostPage} />
+    </>
+  );
+}
+
+export default App;
+```
+
+그러면 이제 뭐 아주 자연스럽게 작동할거다. 물론 링크에 드러갈 때마다 계속 1초동안 로딩되는건 있지만 이건 벨로퍼트님의 다음 강의가 있으니 그걸 보자 =)
 
 ---
 
