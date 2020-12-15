@@ -16,6 +16,22 @@
 
 ---
 
+## 콜 스택(Call stack)
+프로그램이 함소 호출을 추적할 때 사용하는 것이다. 콜 스택은 function call 당 하나씩의 스택들로 이루어 져있다. 작동되는 순서에 따라 차례대로 콜 스택에 들어가고, 값을 반환하면 콜 스택에서 지워진다. 자바스크립트는 싱글 스레드를 기반하기 때문에 단 한줄의 콜 스택만이 존재한다.
+```javascript
+function A(){
+  return 'hello';
+}
+function B(){
+  return `${A()} {everyone!}`;
+}
+```
+1. 먼저 소환된 `function B`를 콜 스택에 추가
+2. `function B`가 `function A`를 소환
+3. `function A`가 콜 스택에 추가
+4. `function A`가 `'hello'`값 출력후 스택에서 삭제
+5. `function B`가 `'hello everyone!'`값 출력후 스택에서 삭제
+
 ## 이벤트 루프(Event loop)
 
 자바스크립트 엔진은 `Memory Heap` 과 `Call Stack`으로 구성 되어있다. 가장 유명한 것은 구굴의 V8 engine 이다. 자바스크립트는 **단일 스레드(single thread) 프로그래밍 언어**, 바로 **`call stack` 이 하나** 라는 뜻이다(멀티가 되지 않고 하나씩 처리한다). *(stack: 선입후출의 룰을 따른다)*
