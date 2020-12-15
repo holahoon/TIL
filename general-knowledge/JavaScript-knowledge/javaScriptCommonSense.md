@@ -31,6 +31,10 @@ function B(){
 3. `function A`가 콜 스택에 추가
 4. `function A`가 `'hello'`값 출력후 스택에서 삭제
 5. `function B`가 `'hello everyone!'`값 출력후 스택에서 삭제
+> *콜 스택은 LIFO (Last In First Out) 형식으로 취한다.*
+
+## 큐(Queue)
+대기열과 같은 개념이라고 이해하면 된다. 
 
 ## 이벤트 루프(Event loop)
 
