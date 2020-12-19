@@ -493,7 +493,7 @@ export default function PostListContainer() {
     dispatch(getPostsAsync());
   }, [data, dispatch]);
 
-  if (loading) return <div>Loading...</div>;
+  if (loading && !data) return <div>Loading...</div>; // 로딩중이면서, 데이터가 없을 때에만 Loading... 표시
   if (error) return <div>Error occurred!</div>;
   if (!data) return null;
 
@@ -555,7 +555,7 @@ import PostPage from "./pages/PostPage";
 function App() {
   return (
     <>
-      <Route path='/' component={PostListPage} />
+      <Route path='/' exact component={PostListPage} />
       <Route path='/:id' component={PostPage} />
     </>
   );
