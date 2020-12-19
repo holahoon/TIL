@@ -415,19 +415,19 @@ export default function postsReducer(state = initialState, action) {
  * type: 액션의 타입
  * key: 상태의 key (i.e. posts, post)
  */
-export const handlAsyncActions = (type, key) => {
+export const handlAsyncActions = (type, key, keepData = false) => {
   const [SUCCESS, FAIL] = [`${type}_SUCCESS`, `${type}_FAIL`];
   return (state, action) => {
     switch (action.type) {
       case type:
         return {
           ...state,
-          [key]: reducerUtils.loading(),
+          [key]: reducerUtils.loading(keepData ? state[key].data),
         };
       case SUCCESS:
         return {
           ...state,
-          [key]: reducerUtils.success(action.payload),
+          [key]: reducerUtils.loading(keepData ? state[key].data : null), // keeps the data by passing in either 'posts' or 'post' - data
         };
       case FAIL:
         return {
@@ -450,7 +450,7 @@ export default function postsReducer(state = initialState, action) {
     case GET_POSTS:
     case GET_POSTS_SUCCESS:
     case GET_POSTS_FAIL:
-      return handlAsyncActions(GET_POSTS, "posts")(state, action);
+      return handlAsyncActions(GET_POSTS, "posts", true)(state, action);
 
     case GET_POST:
     case GET_POST_SUCCESS:
@@ -489,8 +489,9 @@ export default function PostListContainer() {
   const dispatch = useDispatch();
 
   useEffect(() => {
+    if (data) return;
     dispatch(getPostsAsync());
-  }, [dispatch]);
+  }, [data, dispatch]);
 
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error occurred!</div>;
