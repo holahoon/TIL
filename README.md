@@ -49,6 +49,7 @@
 * **Redux Middleware**
   * [What is middleware](./front-end/Redux/reduxMiddleware/whatIsMiddleware.md) - 미들웨어의 기본 지식
   * [redux-thunk](./front-end/Redux/reduxMiddleware/reduxThunk.md) - redux-thunk를 사용한 미들웨어
+    * [redux-thunk with router](./front-end/Redux/reduxMiddleware/reduxThunkWithRouter.md) - redux-thunk에서 라우터 연동하기
   * [redux-logger](./front-end/Redux/reduxMiddleware/whatIsMiddleware.md) - console.log로 액션, 디스패치를 볼수 있는 툴(라이브러리) - [What is middleware](./front-end/Redux/reduxMiddleware/whatIsMiddleware.md) 를 참고
   * [Redux-DevTools](./front-end/Redux/reduxMiddleware/whatIsMiddleware.md) - 리덕스 데브툴즈 - [What is middleware](./front-end/Redux/reduxMiddleware/whatIsMiddleware.md) 를 참고
 * **Redux helper tools**
