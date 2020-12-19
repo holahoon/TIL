@@ -57,6 +57,9 @@
 
 ## 🔧 Tools
 
+#### Github
+* [Create a personal access token](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/creating-a-personal-access-token) - HTTPS 로 repo를 clone 할 경우를 추천함.
+
 #### Git
 
 #### CLI
