@@ -7,6 +7,7 @@
   - [Document Object Model(DOM)](#document-object-modeldom)
   - [렌더링 최적화 하기](#렌더링-최적화-하기---reflow-repaint-줄이기)
   - [CORS](#cors)
+  - [Proxy](#proxy)
 
 ## 브라우저 동작 원리
 
@@ -48,8 +49,14 @@ reference: [렌더링](https://boxfoxs.tistory.com/408)
 > The Document Object Model (DOM) is a cross-platform and language-independent interface that treats an XML or HTML document as a tree structure wherein each node is an object representing a part of the document. The DOM represents a document with a logical tree.
 
 ## CORS
+> Cross Origin Resource Sharing
 
-Cross Origin Resource Sharing의 줄임말이다. 바로, 서로 다른 origin간에 리소를 공유하는 메커니즘이다(well, what the f does it mean?).
-HTTP 요청은 cross-site HTTP Request가 가능하다. 그러나 script로 둘려쌓여 있는 스크립트에선 same origin policy를 적용받아서 불가하다. 즉, 같은 오리진이 아니면 허용할 수 없다는거다. 그래서 다른 출처의 선택한 자원에 접근할수 있는 권하는 부여하도록 브라우저에게 알려주어 cross-site HTTP request가 가능하게 해주는거다. 예를 들어 도메인 a라는 사이트가 있고, 도메일 a라는 웹 서버에서 리소스를 요청하면 정상적으로 처리가 된다. 그런데 만약 도메인 b라는 웹 서버에서 리소스를 요청 해야 될때 그게 CORS다.
+CORS는 추가 HTTP 헤더를 사용해서 한 출처에서 실행중인 어플리케이션이 다른 출처의 선택한 자원에 접근할 수 있는 권한을 부여하도록 브라우저에게 알려주는 체제다. 즉, 브랴우저에서 기본적으로 API를 요청 할 때에는 브라우저의 현재 주소와 API의 주소의 도메인이 일치해야만 데이터를 접근할 수 있다. 그래서 만약 다른 도메인에서 API를 요청해서 사용할 수 있게 해주려면 CORS 설정이 필요하다.
 
-reference: [CORS](https://im-developer.tistory.com/165), [CORS and its possible solution](https://velog.io/@wlsdud2194/cors)
+reference: [CORS MDN](https://developer.mozilla.org/ko/docs/Web/HTTP/CORS)
+
+## Proxy
+
+만약 실제 서비스를 개발할때 서버의 API를 요청을 해야하는데 기본적으로 localhost:3000 에서 들어오는 것이 차단된다. 그래서 서버 쪽에 해당 도메인을 허용하도록 구현해야 한다. 보통 백엔드 개발자가 따로 있으면 백엔드 개발자가 한다. 그러나 굳이 그럴 필요가 없다. 웹팩 개발서버에서 제공하는 Proxy라는 기능이 있기 때문이다.
+
+reference: [Velopert CORS](https://react.vlpt.us/redux-middleware/09-cors-and-proxy.html)

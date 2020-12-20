@@ -88,3 +88,50 @@ export const getPostById = async (id) => {
 };
 ```
 이제 진짜 axios를 사용해서 데이터를 전달받는 함수를 구현하였다.
+
+## CORS and Proxy
+
+일단 CRA는 localhost:3000에서 돌아가고 현재 json-server 는 localhost:4000 에서 돌아가고 있다.
+**만약 리액트로 만든 서비스와 API가 동일한 도메인에서 제공이 되야 하는 경우 proxy를 사용해보자.**
+
+```json
+...
+"browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "proxy": "http://localhost:4000" // <-- 요기 추가
+}
+```
+
+```jsx
+import axios from "axios";
+
+// 포스트 목록을 가져오는 비동기 함수
+export const getPosts = async () => {
+  // const response = await axios.get("http://localhost:4000/posts");
+  const response = await axios.get("/posts");
+  return response.data;
+};
+
+// ID로 포스트를 조회하는 비동기 함수
+export const getPostById = async (id) => {
+  // const response = await axios.get(`http://localhost:4000/posts/${id}`);
+  const response = await axios.get(`/posts/${id}`);
+  return response.data;
+};
+```
+위와 같이 get() 메소드 안에 `'/post'` 를 넣어줌으로 localhost:4000으로 가는게 아니라 localhost:3000으로 요청을 하게 된다.
+크롬 네트워크 탭을 열어서 보자. posts, 1, 2, 3 이런 애들을 보면 Request URL: http://localhost:3000으로 되있다.
+
+만약에 서비스 도메인과 API의 도메인이 다르다면 axios의 글로벌 [baseURL](https://github.com/axios/axios#global-axios-defaults)를 설정하면 된다.
+
+reference: [Velopert CORS and Proxy](https://react.vlpt.us/redux-middleware/09-cors-and-proxy.html)

@@ -58,7 +58,7 @@
 
 #### ETC
 
-* [json-server](./front-end/ETC/jsonServer.md) - 로컬 환경에 가짜 API 서버 를 만들기 위한 도구
+* [json-server](./front-end/ETC/jsonServer.md) - 로컬 환경에 가짜 API 서버 를 만들기 위한 도구 - went over how to use React.js with json-server along with CORS and Proxy.
 
 ## 🔧 Tools
 
