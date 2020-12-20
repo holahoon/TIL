@@ -68,3 +68,23 @@ localhost 4000에 돌리는 이유는 이미 리액트는 3000에 호스팅 되�
 ```sh
 $ yarn add axios
 ```
+
+다시한번 [redux-thunk](./../Redux/reduxMiddleware/reduxThunk.md) 파일을 참고해보면 여기에 포스트 목록과 id 파라미터를 받아서 포스트를 가져오는 비동기 함수가 있다. `setTimeout`을 사용해서 만들었지만 지금은 json 파일을 사용해서 로컬에 서버를 돌리고 있으니 그걸 사용 하는거다.
+
+##### api/posts.js
+```jsx
+import axios from "axios";
+
+// 포스트 목록을 가져오는 비동기 함수
+export const getPosts = async () => {
+  const response = await axios.get("http://localhost:4000/posts");
+  return response.data;
+};
+
+// ID로 포스트를 조회하는 비동기 함수
+export const getPostById = async (id) => {
+  const response = await axios.get(`http://localhost:4000/posts/${id}`);
+  return response.data;
+};
+```
+이제 진짜 axios를 사용해서 데이터를 전달받는 함수를 구현하였다.
