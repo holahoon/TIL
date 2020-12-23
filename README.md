@@ -32,6 +32,7 @@
 * [Ways to check if the property exists in an object](./front-end/JavaScript/PropertyInObject.md)
 * [Shallow Copy & Deep copy](./front-end/JavaScript/ShallowAndDeepCopy.md)
 * [Binary & Unary Operators](./front-end/JavaScript/BinaryAndUnaryOperators.md)
+* [Generator Object](./front-end/JavaScript/generatorObject.md) - is returned by a generator function.
 
 #### TypeScript
 
