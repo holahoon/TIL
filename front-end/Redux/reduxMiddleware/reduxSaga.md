@@ -1,5 +1,7 @@
 # redux-saga middleware
 
+> 작업이 까다로울땐 사가 함수를 직접 작성하는것을 추천한다. 반면, 작업이 간단한 비동기 작업 처리를 할때는 redux-thunk를 사용해서 반복되는 로직을 함수화 해서 재사용여 훨씬 깔끔한 코드를 작성하는걸 추천한다.
+
 [redux-saga documentation](https://github.com/redux-saga/redux-saga)
 
 액션을 모니터링하고 있다가, 특정 액션이 발생하면 이에 따라 특정 작업을 하는 방식으로 사용한다. 여기서 특정 작업이란 자바스크립트를 실행하는 것 일수도 있고, 다른 액션을 디스패치 하는 것 일수도 있고, 현태 상태를 불러오는 것 일수도 있다.
@@ -21,7 +23,7 @@ $ yarn add redux-saga
 
 ## Getting Started
 
-#### 👉 [redux-thunk](./reduxThunk.md) 파일 참고
+#### 👉 아래 예제는 [redux-thunk](./reduxThunk.md) 파일 참고
 
 #### modules/counter.js (redux module - actionCreator/reducer/state)
 ```jsx
@@ -169,7 +171,7 @@ function App() {
 export default App;
 ```
 
-이제 <button>+</button> 버튼과 <button>-</button> 버튼을 눌러보자.
+자, 이제 <button>+</button> 버튼과 <button>-</button> 버튼을 눌러보자.
 <button>+</button> 버튼을 누를시 count 숫자가 누른만큼 올라가는걸 볼수 있다. 바로 `takeEvery` 유틸 함수 안에서 모든 INCREASE_ASYNC 액션을 다 처리하기 때문이다.
 반면에 <button>-</button> 버튼을 누를시엔 count 숫자가 내려가긴 하지만 spamming click을 해도 한번밖에 내려가질 않는다. `takeLatest` 유틸 함수 에서 마지막 액션만을 처리하기 때문이다.
 겁나 신기방기 해부러ㅎㅎ
