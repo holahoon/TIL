@@ -31,10 +31,13 @@
 #### JavaScript
 * [Modify an object](./front-end/JavaScript/modifyObject.md) - add, modify, deleting properties in an object. Dynamic property assignment.
 * [Copy an object](./front-end/JavaScript/copyObject.md) - copy an object using spread operator or Object.assign along with deep(nested) copy.
+* [Object destructuring]() - destructurting an object.
 * [Ways to check if the property exists in an object](./front-end/JavaScript/PropertyInObject.md)
 * [Shallow Copy & Deep copy](./front-end/JavaScript/ShallowAndDeepCopy.md)
 * [Binary & Unary Operators](./front-end/JavaScript/BinaryAndUnaryOperators.md)
 * [Generator Object](./front-end/JavaScript/generatorObject.md) - is returned by a generator function.
+* [Understanding `this` keyword](./front-end/JavaScript/understandThisKeyword.md) - understanding `this` keyword in JavaScript.
+* [Understanding `getters` and `setters`](./front-end/JavaScript/understandGetterAndSetter.md) - times when a property can be set or to get(retrieve) it.
 
 #### TypeScript
 

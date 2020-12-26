@@ -35,7 +35,7 @@ console.log(person);
 
 When in need(most of the times) to copy an object, this method is recommended.
 
-#### cloning an object and assign an updated value
+#### clone an object and assign an updated value
 ```javascript
 const person = {
     name: 'DK',
@@ -50,3 +50,31 @@ console.log(person);
 ```
 
 > However, `[...]` spread operator does NOT deep clone reference types within object/array.
+
+#### clone a reference type within an object [optional]
+
+```javascript
+const person = {
+    name: 'DK',
+    age: 30,
+    hobbies: ['cooking', 'driving', 'coding'],
+};
+
+const deepCopiedPerson = {...person, hobbies: [...person.hobbies]};
+deepCopiedPerson.hobbies.pop(); // removes the last element in an array - 'coding'
+
+console.log(deepCopiedPerson);
+// {name: "DK", age: 30, hobbies: Array(2)}
+console.log(person);
+// {name: "DK", age: 30, hobbies: Array(3)}
+```
+
+#### old way of cloning an object (ES5)
+```javascript
+const person = {
+    name: 'DK',
+    age: 30
+}
+
+const copiedPerson = Object.assign({}, person);
+```
