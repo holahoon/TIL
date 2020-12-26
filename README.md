@@ -29,6 +29,8 @@
 ## 🙌 Front-end
 
 #### JavaScript
+* [Modify an object](./front-end/JavaScript/modifyObject.md) - add, modify, deleting properties in an object. Dynamic property assignment.
+* [Copy an object](./front-end/JavaScript/copyObject.md) - copy an object using spread operator or Object.assign along with deep(nested) copy.
 * [Ways to check if the property exists in an object](./front-end/JavaScript/PropertyInObject.md)
 * [Shallow Copy & Deep copy](./front-end/JavaScript/ShallowAndDeepCopy.md)
 * [Binary & Unary Operators](./front-end/JavaScript/BinaryAndUnaryOperators.md)
