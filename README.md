@@ -38,7 +38,7 @@
 * [Generator Object](./front-end/JavaScript/generatorObject.md) - is returned by a generator function.
 * [Understanding `this` keyword](./front-end/JavaScript/understandThisKeyword.md) - understanding `this` keyword in JavaScript.
 * [Understanding `getters` and `setters`](./front-end/JavaScript/understandGetterAndSetter.md) - times when a property can be set or to get(retrieve) it.
-* [Object-oriented Programming]() - OOP
+* [Working with Classes](./front-end/JavaScript/workingWithClasses.md) - Working with classes(Object-oriented Programming).
 
 #### TypeScript
 
