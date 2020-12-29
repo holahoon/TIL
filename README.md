@@ -52,6 +52,8 @@
 
 #### React
 
+* [React Performance Optimization](./front-end/React/reactPerformanceOpti.md) - In times when in need of **not** using `pagination` or `virtualization` but rather need to render a **chunk of components at once**.
+
 #### Redux
 
 * **Redux Middleware**
