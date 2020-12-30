@@ -55,9 +55,13 @@ export default function App() {
 ```jsx
 import "./square.css";
 
-export default function Square({ onSquareClick }) {  
-  return <div className='square' onClick={onSquareClick}></div>;
+export default function Square({ squareClickHandler }) {  
+  return <div className='square' onClick={squareClickHandler}></div>;
 };
 ```
 
 Say we have this very simple `Square` component being rendered 10k times in the parent container - `App`.
+
+When I tried to run the app, it automatically complains that it's rendering too much and if I console log inside Square component, it just re-renders 10k again and again whenever the parent container(`App.js`) changes its state.
+Not realistic to render a component 10k times, but it's got some room to improve.
+
