@@ -128,3 +128,82 @@ class Product {
   }
 }
 ``` 
+
+`this.title = title` adds a new "title" property to the eventually created objects.
+
+### Refactor the code even more
+
+```javascript
+class Product {
+  title = "DEFAULT VALUE";
+  imageUrl;
+  description;
+  price;
+
+  constructor(title, image, description, price) {
+    this.title = title;
+    this.imageUrl = image;
+    this.description = description;
+    this.price = price;
+  }
+}
+
+class ProductItem {
+  constructor(product) {
+    this.product = product;
+  }
+
+  render() {
+    const prodEl = document.createElement("li");
+    prodEl.className = "product-item";
+    prodEl.innerHTML = `
+        <div>
+            <img src="${this.product.imageUrl}" alt="${this.product.description}" />
+            <div class="product-item__content">
+            <h2>${this.product.title}</h2>
+            <h3>$${this.product.price}</h3>
+            <p>${this.product.description}</p>
+            <button>Add to Cart</button>
+            </div>
+        </div>
+      `;
+    return prodEl;
+  }
+}
+
+class ProductList {
+  products = [
+    new Product(
+      "NSX",
+      "https://i.pinimg.com/originals/93/96/97/939697706133b449de845bdce4498620.jpg",
+      "Honda NSX 1st generation",
+      70000.0
+    ),
+    new Product(
+      "S2000",
+      "https://i.pinimg.com/originals/a0/e9/00/a0e90061b28071466bd43dc48a8f9028.jpg",
+      "Honda S2000, the lengendary",
+      30000.0
+    ),
+  ];
+
+  constructor() {}
+
+  render() {
+    const renderHook = document.getElementById("app");
+    const prodList = document.createElement("ul");
+    prodList.className = "product-list";
+
+    for (const prod of this.products) {
+      const productItem = new ProductItem(prod);
+      const prodEl = productItem.render(); // returns a created div element
+
+      prodList.append(prodEl);
+    }
+    renderHook.append(prodList);
+  }
+}
+
+const productList = new ProductList();
+productList.render();
+```
