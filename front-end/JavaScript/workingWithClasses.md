@@ -207,3 +207,29 @@ class ProductList {
 const productList = new ProductList();
 productList.render();
 ```
+
+## Using `bind()` method
+
+In times when we need to add an event listener to an element and need to pass in a callback function,
+
+```javascript
+class ProductItem {
+  constructor(product) {
+    this.product = product;
+  }
+
+  addToCart() {
+    console.log("adding product to cart...");
+    console.log(this.product);
+  }
+
+  render() {
+    const prodEl = document.createElement("li");
+    ...
+
+    const addCartButton = prodEl.querySelector("button");
+    addCartButton.addEventListener("click", this.addToCart.bind(this));
+    return prodEl;
+  }
+}
+```

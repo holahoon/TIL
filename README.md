@@ -37,8 +37,9 @@
 * [Binary & Unary Operators](./front-end/JavaScript/BinaryAndUnaryOperators.md)
 * [Generator Object](./front-end/JavaScript/generatorObject.md) - is returned by a generator function.
 * [Understanding `this` keyword](./front-end/JavaScript/understandThisKeyword.md) - understanding `this` keyword in JavaScript.
-* [Understanding `getters` and `setters`](./front-end/JavaScript/understandGetterAndSetter.md) - times when a property can be set or to get(retrieve) it.
-* [Working with Classes](./front-end/JavaScript/workingWithClasses.md) - Object-Oriented Programming
+* [Working with Classes](./front-end/JavaScript/workingWithClasses.md) - Object-Oriented Programming - basics
+  * [Static methods, fields & properties](./front-end/JavaScript/staticMethodsAndProperties.md)
+  * [Understanding `getters` and `setters`](./front-end/JavaScript/understandGetterAndSetter.md) - times when a property can be set or to get(retrieve) it.
 
 #### TypeScript
 
