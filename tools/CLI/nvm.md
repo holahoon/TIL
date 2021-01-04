@@ -1,6 +1,8 @@
 # NVM (Node Version Manager)
 
-### Install & Update Script
+## Install & Update Script
+
+### For MacOS
 
 ##### 아래에 있는 script를 사용하는 cli 에 돌린다
 나는 개인적으로 curl을 돌렸지만 사실 이것만이 방법이 아닌 깃허브 공식문서에 보면 몇가지의 방법이 더 있긴하다.
@@ -14,13 +16,17 @@ wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.1/install.sh | bash
 
 Running either of the above commands downloads a script and runs it. The script clones the nvm repository to ~/.nvm, and attempts to add the source lines from the snippet below to the correct profile file (~/.bash_profile, ~/.zshrc, ~/.profile, or ~/.bashrc).
 
+### For Windows 10
+
+Make sure that you have Nodejs installed on your software.
+Install NVM by going onto this [https://github.com/coreybutler/nvm-windows/releases](https://github.com/coreybutler/nvm-windows/releases) and download nvm-setup.zip file. Unzip the file and install NVM.
 
 ```sh
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 ```
 
-### Usage
+## Usage
 
 최신 버전의 node를 다운로드, 컴파일, 인스톨 할경우:
 ```sh
