@@ -40,6 +40,7 @@
 * [Working with Classes](./front-end/JavaScript/workingWithClasses.md) - Object-Oriented Programming - basics
   * [Static methods, fields & properties](./front-end/JavaScript/staticMethodsAndProperties.md)
   * [Understanding `getters` and `setters`](./front-end/JavaScript/understandGetterAndSetter.md) - times when a property can be set or to get(retrieve) it.
+  * [Class Inheritance](./front-end/JavaScript/classInheritance.md) - Inherit class
 
 #### TypeScript
 
