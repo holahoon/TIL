@@ -41,6 +41,7 @@
   * [Static methods, fields & properties](./front-end/JavaScript/staticMethodsAndProperties.md)
   * [Understanding `getters` and `setters`](./front-end/JavaScript/understandGetterAndSetter.md) - times when a property can be set or to get(retrieve) it.
   * [Class Inheritance](./front-end/JavaScript/classInheritance.md) - Inherit class
+  * [Class Private Fields, Properties and Methods](./front-end/JavaScript/classPrivateProperties.md) - Class private properties
 
 #### TypeScript
 
