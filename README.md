@@ -54,6 +54,7 @@
 #### React
 
 * [React Performance Optimization](./front-end/React/reactPerformanceOpti.md) - In times when in need of **not** using `pagination` or `virtualization` but rather need to render a **chunk of components at once**.
+* [When to use React.useCallback and React.useMemo](front-end/React/useCallbackAnduseMemo.md) - Diving deep into when to use React.useCallback or React.useMemo.
 
 #### Redux
 
