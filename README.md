@@ -43,6 +43,8 @@
   * [Understanding `getters` and `setters`](./front-end/JavaScript/understandGetterAndSetter.md) - times when a property can be set or to get(retrieve) it.
   * [Class Inheritance](./front-end/JavaScript/classInheritance.md) - Inherit class
   * [Class Private Fields, Properties and Methods](./front-end/JavaScript/classPrivateProperties.md) - Class private properties
+  * [Constructor Functions](./front-end/JavaScript/constructorFunctions.md) - how `contructor(){}` works in class pretty much.
+  * [Prototypes](./front-end/JavaScript/prototypes.md) - continues using [constructor functions](./front-end/JavaScript/constructorFunctions.md)
 
 #### TypeScript
 
