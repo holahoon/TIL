@@ -43,3 +43,4 @@ const dispense = React.useCallback((candy) => {
 This useCallback allows us to prevent from recreating the `dispense()` function whenever the component rerenders after state updates.
 **This may sound like it's a better performance, but it really is NOT**
 
+TODO: MAY NEED TO CONTINUE
