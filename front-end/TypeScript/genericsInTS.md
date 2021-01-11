@@ -1,5 +1,7 @@
 # Generics in TypeScript
 
+#### [reference](https://levelup.gitconnected.com/typescript-generics-with-a-witcher-6f449f253e13)
+
 Benefits of using generics in TS help us to create more reusable chunks of code. They help us to create well defined classes, interfaces and function while still giving us the flexibility of keeping them "generic" - by making them work according to a passed type (or types) by the programmer.
 
 ## Example
