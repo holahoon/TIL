@@ -44,6 +44,7 @@
 #### TypeScript
 
 * [Get Started with TS](./front-end/TypeScript/getStartedWithTS.md)
+* [Generics in TS](./front-end/TypeScript/genericsInTS.md)
 * **TypeScript with React**
   * [TS with React](./front-end/TypeScript/reactWithTS.md)
   * [TS with React Functional Component](./front-end/TypeScript/reactFunctionalComponentTS.md)
