@@ -48,6 +48,7 @@
   * [Methods in Classes & in Constructors](./front-end/JavaScript/methodsInClasses.md) - Declaring methods in a class and constructor. Summary of contructor funtions and methods as well.
 * **DOM & Browser APIs**
   * [dataset](./front-end/JavaScript/DOM_and_browser/dataset.md) - Access data-* Attributes
+  * [Scrolling Events Tips](./front-end/JavaScript/DOM_and_browser/scrollingEvents.md) - Some tips to know when scrolling
 
 #### TypeScript
 
