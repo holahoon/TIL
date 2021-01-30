@@ -9,6 +9,7 @@
 ## 📝 Categories
 
 * **Front-end**
+  * [HTML](#HTML)
   * [JavaScript](#javascript)
   * [TypeScript](#typescript)
   * [React](#react)
@@ -27,6 +28,9 @@
 ---
 
 ## 🙌 Front-end
+
+#### HTML
+* [template tag]() - using `template` tag to set up "to be used" HTML code.
 
 #### JavaScript
 * [Modify an object](./front-end/JavaScript/modifyObject.md) - add, modify, deleting properties in an object. Dynamic property assignment.
