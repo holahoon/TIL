@@ -29,11 +29,11 @@
 
 ## 🙌 Front-end
 
-#### HTML
+### HTML
 * [template tag](./front-end/HTML/templateTag.md) - using `template` tag to set up "to be used" HTML code.
 * * [Load Scripts dynamically](./front-end/HTML/loadScriptDynamically.md) - Use JavaScript to add `script` dynamically instead of manually adding into HTML file.
 
-#### JavaScript
+### JavaScript
 * [Modify an object](./front-end/JavaScript/modifyObject.md) - add, modify, deleting properties in an object. Dynamic property assignment.
 * [Copy an object](./front-end/JavaScript/copyObject.md) - copy an object using spread operator or Object.assign along with deep(nested) copy.
 * [Object destructuring]() - destructurting an object.
@@ -51,11 +51,15 @@
   * [Constructor Functions](./front-end/JavaScript/constructorFunctions.md) - how `contructor(){}` works in class pretty much.
   * [Prototypes](./front-end/JavaScript/prototypes.md) - continues using [constructor functions](./front-end/JavaScript/constructorFunctions.md)
   * [Methods in Classes & in Constructors](./front-end/JavaScript/methodsInClasses.md) - Declaring methods in a class and constructor. Summary of contructor funtions and methods as well.
-* **DOM & Browser APIs**
-  * [dataset](./front-end/JavaScript/DOM_and_browser/dataset.md) - Access data-* Attributes
-  * [Scrolling Events Tips](./front-end/JavaScript/DOM_and_browser/scrollingEvents.md) - Some tips to know when scrolling
+  
+**DOM & Browser APIs**
+* [dataset](./front-end/JavaScript/DOM_and_browser/dataset.md) - Access data-* Attributes
+* [Scrolling Events Tips](./front-end/JavaScript/DOM_and_browser/scrollingEvents.md) - Some tips to know when scrolling
 
-#### TypeScript
+**Working with events**
+* [Browser Events](./events/../front-end/JavaScript/events/browserEvents.md) - working with events.
+
+### TypeScript
 
 * [Get Started with TS](./front-end/TypeScript/getStartedWithTS.md)
 * [Generics in TS](./front-end/TypeScript/genericsInTS.md)
@@ -66,12 +70,12 @@
   * [TS with React useReucer](./front-end/TypeScript/reactUseReducerTS.md)
   * [TS with React Context API](./front-end/TypeScript/reactContextTS.md)
 
-#### React
+### React
 
 * [React Performance Optimization](./front-end/React/reactPerformanceOpti.md) - In times when in need of **not** using `pagination` or `virtualization` but rather need to render a **chunk of components at once**.
 * [When to use React.useCallback and React.useMemo](front-end/React/useCallbackAnduseMemo.md) - Diving deep into when to use React.useCallback or React.useMemo.
 
-#### Redux
+### Redux
 
 * **Redux Middleware**
   * [What is middleware](./front-end/Redux/reduxMiddleware/whatIsMiddleware.md) - 미들웨어의 기본 지식
@@ -91,23 +95,23 @@
 
 ## 🔧 Tools
 
-#### Github
+### Github
 * [Create a personal access token](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/creating-a-personal-access-token) - HTTPS 로 repo를 clone 할 경우 two-step authentication에 필요한 토큰을 받는 방법
 
-#### Git
+### Git
 
-#### CLI
+### CLI
 
 * [Terminal Commands](./tools/CLI/terminalCommands.md) - Terminal commands list
 * [NVM](./tools/CLI/nvm.md) - Node Version Manager
 
-#### VSCode
+### VSCode
 
 * [User Snippet](./tools/VSCode/userSnippet.md)
 
 ## 🧩 General Knowledge
 
-#### Front-end Knowledge
+### Front-end Knowledge
 
 * [Front-end Common Sense](./general-knowledge/Front-end-knowledge/front-endCommonSense.md)
 
@@ -120,7 +124,7 @@
 
 ## 🧑🏻‍💻 Algorithm
 
-#### JavaScript Algorithm
+### JavaScript Algorithm
 
 * [JavaScript Algorithm](./algorithm/JavaScriptAlgorithm.md)
 
