@@ -54,11 +54,12 @@
   
 **DOM & Browser APIs**
 * [dataset](./front-end/JavaScript/DOM_and_browser/dataset.md) - Access data-* Attributes
-* [Scrolling Events Tips](./front-end/JavaScript/DOM_and_browser/scrollingEvents.md) - Some tips to know when scrolling
 
 **Working with events**
-* [Browser Events](./events/../front-end/JavaScript/events/browserEvents.md) - working with events.
+* [Browser Events](./events/../front-end/JavaScript/events/browserEvents.md) - working with events (addEventListener, removeEventListener).
 * [Basic infinite scrolling](./front-end/JavaScript/events/basicInfiniteScroll.md) - an example to create a basic infinite scrolling
+* [Scrolling Events Tips](./front-end/JavaScript/DOM_and_browser/scrollingEvents.md) - Some tips to know when scrolling.
+* [Event Propagation](./front-end/JavaScript/events/eventPropagation.md) - event propagation.
 
 ### TypeScript
 
