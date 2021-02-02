@@ -58,6 +58,7 @@
 
 **Working with events**
 * [Browser Events](./events/../front-end/JavaScript/events/browserEvents.md) - working with events.
+* [Basic infinite scrolling](./front-end/JavaScript/events/basicInfiniteScroll.md) - an example to create a basic infinite scrolling
 
 ### TypeScript
 
