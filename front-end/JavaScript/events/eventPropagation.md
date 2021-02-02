@@ -60,3 +60,6 @@ const btn = document
 Also, there's another method `event.stopImmediatePropagation()`. This is used when there are multiple event listeners on the same element(i.e. more event listeners on the `button` element), then after the first event listener, the other event listeners on the same element also wouldn't run anymore.
 
 So, `event.stopPropagation()` - all event listeners will execute, just not on the ancestor.
+
+### 꿀팁
+To check whether the event `propagates(bubbles)`, just console log the `event` and see the `bubbles: ` property and if it has true - it propagates.
