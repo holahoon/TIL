@@ -61,6 +61,9 @@
 * [Scrolling Events Tips](./front-end/JavaScript/DOM_and_browser/scrollingEvents.md) - Some tips to know when scrolling.
 * [Event Propagation](./front-end/JavaScript/events/eventPropagation.md) - event propagation.
 
+**Functions**
+*[Pure functions & Side-effects]() - What is "pure" function without "side effects"
+
 ### TypeScript
 
 * [Get Started with TS](./front-end/TypeScript/getStartedWithTS.md)
