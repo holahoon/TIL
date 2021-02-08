@@ -62,7 +62,8 @@
 * [Event Propagation](./front-end/JavaScript/events/eventPropagation.md) - event propagation.
 
 **Functions**
-*[Pure functions & Side-effects]() - What is "pure" function without "side effects"
+*[Pure functions & Side-effects](./front-end/JavaScript/functions/pureFunctions.md) - What is "pure" function without "side effects"
+[Factory functions]() - A function that returns a new object.
 
 ### TypeScript
 
