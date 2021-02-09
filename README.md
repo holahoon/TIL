@@ -65,6 +65,7 @@
 * [Pure functions & Side-effects](./front-end/JavaScript/functions/pureFunctions.md) - What is "pure" function without "side effects"
 * [Factory functions](./front-end/JavaScript/functions/pureFunctions.md) - A function that returns a new object.
 * [Closures](./front-end/JavaScript/functions/closures.md) - Every function in JavaScript is a closure.
+* [Recursion]()
 
 
 ### TypeScript
