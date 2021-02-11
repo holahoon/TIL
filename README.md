@@ -52,20 +52,24 @@
   * [Prototypes](./front-end/JavaScript/prototypes.md) - continues using [constructor functions](./front-end/JavaScript/constructorFunctions.md)
   * [Methods in Classes & in Constructors](./front-end/JavaScript/methodsInClasses.md) - Declaring methods in a class and constructor. Summary of contructor funtions and methods as well.
   
-**DOM & Browser APIs**
+##### DOM & Browser APIs
 * [dataset](./front-end/JavaScript/DOM_and_browser/dataset.md) - Access data-* Attributes
 
-**Working with events**
+##### Working with events
 * [Browser Events](./events/../front-end/JavaScript/events/browserEvents.md) - working with events (addEventListener, removeEventListener).
 * [Basic infinite scrolling](./front-end/JavaScript/events/basicInfiniteScroll.md) - an example to create a basic infinite scrolling
 * [Scrolling Events Tips](./front-end/JavaScript/DOM_and_browser/scrollingEvents.md) - Some tips to know when scrolling.
 * [Event Propagation](./front-end/JavaScript/events/eventPropagation.md) - event propagation.
 
-**Functions**
+##### Functions
 * [Pure functions & Side-effects](./front-end/JavaScript/functions/pureFunctions.md) - What is "pure" function without "side effects"
 * [Factory functions](./front-end/JavaScript/functions/pureFunctions.md) - A function that returns a new object.
 * [Closures](./front-end/JavaScript/functions/closures.md) - Every function in JavaScript is a closure.
-* [Recursion]()
+* [Recursion](./front-end/JavaScript/functions/recursion.md) - What is recursion? - a function that returns itself. whuuutttt
+
+##### Strings
+* [Tagged Template Literals](./strings/../front-end/JavaScript/strings/taggedTemplate.md) - This is a pretty interesting string using template literals.
+* [Regex]()
 
 
 ### TypeScript
