@@ -69,10 +69,12 @@
 
 ##### Strings
 * [Tagged Template Literals](./strings/../front-end/JavaScript/strings/taggedTemplate.md) - This is a pretty interesting string using template literals.
-* [Regex](./front-end/JavaScript/strings/regex.md) - Regular Expression
+* [Regex](./front-end/JavaScript/strings/regex.md) - Regular Expression.
 
 ##### Async, Promises and Callbacks
-* [Async & Sync](./front-end/JavaScript/async_promises_callbacks/asyncAndSync.md) - Asynchronous & Synchronous and Event Loop
+* [Asynchronous & Synchronous](./front-end/JavaScript/async_promises_callbacks/asyncAndSync.md) - Asynchronous & Synchronous code and Event Loop.
+* [Promises](./front-end/JavaScript/async_promises_callbacks/promises.md) - Promises to avoid callback hell when working with asynchronous code.
+* [Async / Await function](./front-end/JavaScript/async_promises_callbacks/asyncAndAwait.md) - Async and Await function when working with asynchronous code.
 
 
 ### TypeScript
