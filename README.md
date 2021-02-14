@@ -69,7 +69,10 @@
 
 ##### Strings
 * [Tagged Template Literals](./strings/../front-end/JavaScript/strings/taggedTemplate.md) - This is a pretty interesting string using template literals.
-* [Regex]()
+* [Regex](./front-end/JavaScript/strings/regex.md) - Regular Expression
+
+##### Async, Promises and Callbacks
+* [Async & Sync](./front-end/JavaScript/async_promises_callbacks/asyncAndSync.md) - Asynchronous & Synchronous and Event Loop
 
 
 ### TypeScript
