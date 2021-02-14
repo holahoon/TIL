@@ -74,6 +74,7 @@
 ##### Async, Promises and Callbacks
 * [Asynchronous & Synchronous](./front-end/JavaScript/async_promises_callbacks/asyncAndSync.md) - Asynchronous & Synchronous code and Event Loop.
 * [Promises](./front-end/JavaScript/async_promises_callbacks/promises.md) - Promises to avoid callback hell when working with asynchronous code.
+* [Promise.all & Promise.race etc]() - In different cases when in need to be more dynamic - `all`, `race`, `allSettled`.
 * [Async / Await function](./front-end/JavaScript/async_promises_callbacks/asyncAndAwait.md) - Async and Await function when working with asynchronous code.
 
 
