@@ -71,6 +71,9 @@
 * [Tagged Template Literals](./strings/../front-end/JavaScript/strings/taggedTemplate.md) - This is a pretty interesting string using template literals.
 * [Regex](./front-end/JavaScript/strings/regex.md) - Regular Expression.
 
+##### HTTP Requests
+* [Getting Started with HTTP](./front-end/JavaScript/http/gettingStartedWithHTTP.md) - HTTP request / response (demonstrated using [jsonplaceholder](https://jsonplaceholder.typicode.com/)) - using `XML Http Request` and `fetch()` API.
+
 ##### Async, Promises and Callbacks
 * [Asynchronous & Synchronous](./front-end/JavaScript/async_promises_callbacks/asyncAndSync.md) - Asynchronous & Synchronous code and Event Loop.
 * [Promises](./front-end/JavaScript/async_promises_callbacks/promises.md) - Promises to avoid callback hell when working with asynchronous code.
