@@ -72,7 +72,9 @@
 * [Regex](./front-end/JavaScript/strings/regex.md) - Regular Expression.
 
 ##### HTTP Requests
-* [Getting Started with HTTP](./front-end/JavaScript/http/gettingStartedWithHTTP.md) - HTTP request / response (demonstrated using [jsonplaceholder](https://jsonplaceholder.typicode.com/)) - using `XML Http Request` and `fetch()` API.
+* [Getting Started with HTTP](./front-end/JavaScript/http/gettingStartedWithHTTP.md) - Let's get started with HTTP request / response 
+* [Xml Http Request](./front-end/JavaScript/http/xmlHttpRequest.md) - Using XML Http Request (XMLHttpRequest).
+* [fetch API](./front-end/JavaScript/http/fetchApi.md) - Using fetch() API to handle http request.
 
 ##### Async, Promises and Callbacks
 * [Asynchronous & Synchronous](./front-end/JavaScript/async_promises_callbacks/asyncAndSync.md) - Asynchronous & Synchronous code and Event Loop.
