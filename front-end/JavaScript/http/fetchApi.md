@@ -58,3 +58,48 @@ Headers are basically metadata that you can attach to an outgoing request.
 The example above is telling the API, "hey my request has json data".
 This is *optional* if the API doesn't require it.
 
+### Error Handling
+
+```javascript
+const URL = "https://jsonplaceholder.typicode.com/pos"; // notice it's got "pos" instead of "posts"
+
+function sentHttpRequest(method, url, data) {
+  return fetch(url, {
+    method: method,
+    body: JSON.stringify(data), // also, this can be binary data, JSON, form data...
+    headers: {
+      "Content-Type": "application/json", // my request has json data
+    },
+  })
+    .then((response) => {
+      if (response.status <= 200 && response.status < 300) {
+        return response.json();
+      } else {
+        return response.json().then((errData) => {
+          console.log("errData: ", errData);
+          throw new Error("something went wrong in from the server");
+        });
+      }
+    })
+    .catch((error) => {
+      // This will be reached if there's an error like internet outtage or server problem 
+      console.log(error);
+      throw new Error("Something went wrong!");
+    });
+}
+
+async function fetchPosts2() {
+  try {
+    const responseData = await sentHttpRequest("GET", URL);
+    for (const post of responseData) {
+      const postEl = document.importNode(postTemplate.content, true);
+      postEl.querySelector("h2").textContent = post.title;
+      postEl.querySelector("p").textContent = post.body;
+      postEl.querySelector("li").id = post.id;
+      listElement.append(postEl);
+    }
+  } catch (error) {
+    alert(error); // Something went wrong!!!!!
+  }
+}
+```
