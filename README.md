@@ -75,6 +75,7 @@
 * [Getting Started with HTTP](./front-end/JavaScript/http/gettingStartedWithHTTP.md) - Let's get started with HTTP request / response 
 * [Xml Http Request](./front-end/JavaScript/http/xmlHttpRequest.md) - Using XML Http Request (XMLHttpRequest).
 * [fetch API](./front-end/JavaScript/http/fetchApi.md) - Using fetch() API to handle http request.
+* [Axios Library](./front-end/JavaScript/http/axios.md) - Using Axios library to make fetching so much easier.
 
 ##### Async, Promises and Callbacks
 * [Asynchronous & Synchronous](./front-end/JavaScript/async_promises_callbacks/asyncAndSync.md) - Asynchronous & Synchronous code and Event Loop.
