@@ -83,6 +83,9 @@
 * [Promise.all & Promise.race etc]() - In different cases when in need to be more dynamic - `all`, `race`, `allSettled`.
 * [Async / Await function](./front-end/JavaScript/async_promises_callbacks/asyncAndAwait.md) - Async and Await function when working with asynchronous code.
 
+##### Modules
+* [Modules](./front-end/JavaScript/modules/modules.md) - Getting started with modules.
+
 
 ### TypeScript
 
