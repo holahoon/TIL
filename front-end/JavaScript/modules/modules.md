@@ -45,3 +45,46 @@ console.log(globalThis.DEFAULT_VALUE); // DK!
 ```
 
 This is a replacement of using `window` object. If I just console log `globalThis`, it will console log the `window` object instead.
+
+### How to use import when the JS file is needed (lazyload)
+
+```javascript
+import { DOMHelper } from "../Utility/DOMHelper.js";
+// import { Tooltip } from "./ToolTip.js";
+
+export class ProjectItem {
+  hasActiveTooltip = false;
+
+  constructor(id, updateProjectListsFunction, type) {
+    this.id = id;
+    this.updateProjectListsHandler = updateProjectListsFunction;
+    this.connectMoreInfoButton();
+    this.connectSwitchButton(type);
+    this.connectDrag();
+  }
+
+  showMoreInfoHandler() {
+    if (this.hasActiveTooltip) {
+      return;
+    }
+    const projectElement = document.getElementById(this.id);
+    const tooltipText = projectElement.dataset.extraInfo;
+
+    import("./ToolTip.js").then((module) => {
+      const tooltip = new module.Tooltip(
+        () => {
+          this.hasActiveTooltip = false;
+        },
+        tooltipText,
+        this.id
+      );
+      tooltip.attach();
+      this.hasActiveTooltip = true;
+    });
+  }
+(...)
+}
+```
+
+Take a look at how it's importing the `ToolTip.js` file. When just importing the file, it will load whenever the HTML file loads. Well, it's fine, but what if there are too many JS files or unused JS file that's being fetched.
+This is the same concept as `lazyloading`. We use the `import()` method in the place where we are going to need that JS file. Then, we chain it with the `.then()` method and access the desired "stuff" with `module`.

@@ -84,7 +84,7 @@
 * [Async / Await function](./front-end/JavaScript/async_promises_callbacks/asyncAndAwait.md) - Async and Await function when working with asynchronous code.
 
 ##### Modules
-* [Modules](./front-end/JavaScript/modules/modules.md) - Getting started with modules.
+* [Modules](./front-end/JavaScript/modules/modules.md) - Getting started with modules and `globalThis` (lazyload).
 
 
 ### TypeScript
