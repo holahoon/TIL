@@ -1,4 +1,4 @@
-# JavaScript Modules.
+# JavaScript Modules. (Modular)
 
 There are times when we need to import bunch of JavaScript files into an HTML file like below.
 
