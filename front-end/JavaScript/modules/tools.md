@@ -108,3 +108,20 @@ Here are some useful links to look at when needed,
 
 
 ## Webpack
+
+#### Install Webpack
+```bash
+$ npm install --save-dev webpack webpack-cli
+```
+
+#### How to use
+We first need to create a webpack file (in the same directory as where the `package.json` lives) - `webpack.config.js`.
+This is the file where the webpack will do its job. This file under the hood is executed by nodeJS.
+In nodeJS world, we export not by simply using `export`, but we should 
+```javascript
+module.exports = {...}
+```
+This simply is a syntax nodeJS uses for exposing that object outside of this file. Then, the webpack tool will go ahead and import that object. This is pretty much a configuration object.
+
+Create a folder called `src` (which is a conventional name). This is where all the input files will live (JS files).
+Say we have multiple nested JS files within the `src` folder and assume that we have an `app.js` file which is the main file. We want to specify the `app.js` file as the *entry point*, and need to also create another folder (say we name it as `scripts`) and specify that as the *output point*

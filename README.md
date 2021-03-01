@@ -86,6 +86,8 @@
 ##### Modular & Tooling & Workflows
 * [Modules(Modular)](./front-end/JavaScript/modules/modules.md) - Getting started with modules and `globalThis` (lazyload).
 * [Tools](./front-end/JavaScript/modules/tools.md) - Tooling using **ESLint** & **Webpack** & **NPM**.
+  * [ESLint]()
+  * [Webpack]()
 
 
 ### TypeScript
