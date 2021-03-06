@@ -320,3 +320,75 @@ If we run `npm run build:prod`, it will build its appropriate folder for product
 So far, we have 2 work flows now,
 `build:dev` - spins up the development server to use in development
 `build:prod` - we use right before we are ready to deploy the project.
+
+### Optimize to clean up the old-generated JS files
+
+Whenever we build something new and files are name slightly differently, old files are kept around and new files are created. We need to clear all the files in the folder with every build, and then just add newly generated files there to get rid of old files that are not needed.
+We need to install a package,
+```bash
+npm install --save-dev clean-webpack-plugin
+```
+This cleans up the webpack output folder.
+
+##### [ webpack.config.js ]
+```javascript
+const path = require('path');
+const CleanPlugin = require('clean-webpack-plugin');
+
+module.exports = {
+  mode: 'development',
+  entry: './src/app.js',
+  output: {
+    filename: 'app.js',
+    path: path.resolve(__dirname, 'assets', 'scripts'),
+    publicPath: 'assets/scripts/',
+  },
+  devtool: 'eval-cheap-module-source-map',
+  plugins: [new CleanPlugin.CleanWebpackPlugin()],
+};
+```
+
+##### [ webpack.config.prod.js ]
+```javascript
+const path = require('path');
+const CleanPlugin = require('clean-webpack-plugin');
+
+module.exports = {
+  mode: 'production',
+  entry: './src/app.js',
+  output: {
+    filename: 'app.js',
+    path: path.resolve(__dirname, 'assets', 'scripts'),
+    publicPath: 'assets/scripts/',
+  },
+  devtool: 'eval-source-map',
+  plugins: [new CleanPlugin.CleanWebpackPlugin()],
+};
+```
+
+Within `plugins: []` is where we can use multiple plugins and for this case, the `CleanPlugin`.
+
+
+#### Let's generate new named JS files upon prod build!
+The browser caches the JS file if the name hasn't changed after the user visits the page. If we want the browser to always fetch the JS file from the server every time the user visits the page, we need to rename the built files on `npm run build:(prod)` (it really only matters in production though).
+
+##### [ webpack.config.prod.js ]
+```javascript
+const path = require('path');
+const CleanPlugin = require('clean-webpack-plugin');
+
+module.exports = {
+  ...
+  output: {
+    filename: '[contenthash].js',
+    path: path.resolve(__dirname, 'assets', 'scripts'),
+    publicPath: 'assets/scripts/',
+  ...
+};
+
+```
+
+`contenthash` is a keyword to webpack which tells webpack that a hash should be generated. A hash that is different whenever a file changed. If the file didn't change, webpack will keep the existing hash.
+By running `npm run build:prod`, it will not create `app.js` in the generated folder, but rather it will generate some random JS file name.
+Now the browser will always download new JS files whenever JS file changes.
+Keep in mind that right now, our HTML file imports `app.js` file and we need to change this (only in production).
