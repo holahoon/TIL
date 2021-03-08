@@ -90,6 +90,8 @@
   * [ESLint](./front-end/JavaScript/modules/eslint.md) - Get started with ESLint.
   * [Webpack](./front-end/JavaScript/modules/webpack.md) - Get started with Webpack.
 
+##### Browser Storage
+* [What is Browser Storage](./front-end/JavaScript/browser_storage/what_is_browser_storage.md) - Getting started with browser storage. `localStorage` & `sessionStorage`, `cookies`, `indexDB`.
 
 ### TypeScript
 
