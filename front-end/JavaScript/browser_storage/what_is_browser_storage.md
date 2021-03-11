@@ -16,6 +16,7 @@ We can only access the data when the user visits the page by using JS.
 So, never rely on these storages since users can always clear and erase all the data. Use it to improve the user experience.
 
 ## localStorage
+[MDN Docs](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage)
 
 accessing localStorage is by calling it,
 ```javascript
@@ -80,6 +81,7 @@ However, if we close the browser and open up the same page again, it's gone unli
 Data inside `sessionStorage` lives as long as the page is opened in the browser even if you reload the page.
 
 ## cookies
+[MDN Docs](https://developer.mozilla.org/en-US/docs/Web/API/Document/cookie)
 
 Cookies get attached to an outgoing `http` requests. The server needs to be "prepared" to do something with the cookies. It's not really a problem, but doesn't really benefit if not prepared.
 Cookies are only available when the webpage is being served with real server.
@@ -147,6 +149,7 @@ An alternative will be to use `expires=` which is useful when have a set date.
 Just like I mentioned above, it's not really a good idea to access cookies by index. When a previous cookie expires and a new one is created, the order of the cookies change. Therefore, it's better to use method like `includes()` to see if such value is included in that array.
 
 ## Index DB
+[MDN Docs](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API/Using_IndexedDB)
 
 #### Getting started with IndexDB
 It is a "In-browser database". Should not really be used for legit data handling, but it's for improving user experience.
