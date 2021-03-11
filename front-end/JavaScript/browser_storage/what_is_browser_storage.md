@@ -145,3 +145,48 @@ If we do so, it will expire after 4 seconds.
 An alternative will be to use `expires=` which is useful when have a set date.
 
 Just like I mentioned above, it's not really a good idea to access cookies by index. When a previous cookie expires and a new one is created, the order of the cookies change. Therefore, it's better to use method like `includes()` to see if such value is included in that array.
+
+## Index DB
+
+#### Getting started with IndexDB
+It is a "In-browser database". Should not really be used for legit data handling, but it's for improving user experience.
+
+```javascript
+const storeIndexBtn = document.getElementById('store-index-btn');
+const retIndexBtn = document.getElementById('retrieve-index-btn');
+
+storeIndexBtn.addEventListener('click', () => {
+  // omitted window - since indexDB exists on window
+  // create a database or open an existing one
+  const dbRequest = indexedDB.open('StorageDummy', 1);
+
+  dbRequest.onupgradeneeded = function (event) {
+    const db = event.target.result;
+
+    const objectStore = db.createObjectStore('products', { keyPath: 'prodId' });
+
+    objectStore.transaction.oncomplete = function (event) {
+      const productsStore = db
+        .transaction('products', 'readwrite')
+        .objectStore('products');
+
+      productsStore.add({
+        prodId: 'p1',
+        title: 'The first product',
+        price: 12.99,
+        tags: ['Expensive', 'Luxury'],
+      });
+    };
+  };
+
+  dbRequest.onerror = function (event) {
+    console.log('Error!');
+  };
+});
+
+retIndexBtn.addEventListener('click', () => {});
+```
+
+It is pretty complicated, but just know that we need to store an `id` in which our case is `prodId`. Just named it like so.
+
+This is super clunky to use. I just decided to not use it
