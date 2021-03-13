@@ -93,6 +93,9 @@
 ##### Browser Storage
 * [What is Browser Storage](./front-end/JavaScript/browser_storage/what_is_browser_storage.md) - Getting started with browser storage. `localStorage` & `sessionStorage`, `cookies`, `indexDB`.
 
+##### Browser Support
+* [Feature Detection + Fallback Code & Using Polyfills or Transpilation](./front-end/JavaScript/browser_support/feature_detection.md) - Browser Support: detect features and make fallback code. Also use polyfills. Or **Transpile Code**.
+
 ### TypeScript
 
 * [Get Started with TS](./front-end/TypeScript/getStartedWithTS.md)
