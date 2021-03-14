@@ -152,4 +152,82 @@ We can now run `npm run build` to build our app.
 When we look at the built folder `assets/scripts/app.js`, we can see that it transpiled from `const` to `var` and `arrow function` to a normal `function`.
 
 However, we have a problem that the `"promise"` in the `navigator.clipboard` is not transpiled which is not supported in old browsers.
+In this case, we need to add polyfills.
+We then look for promise polyfill and install it and blah blah blah...
+Well, what if our project gets bigger and bigger? We can't really check for all the features if they are supported in older browsers.
 
+What if babel automatically sees that we are using `promise` and automatically include polyfill for that? **It is capable of doing it!**
+**[core-js](https://www.npmjs.com/package/core-js) / [github](https://github.com/zloirock/core-js) solves our issue!**
+
+```bash
+npm install --save core-js
+```
+> We don't install it as dev dependency btw.
+
+Then in our `app.js` file, we can add `import 'core-js'`.
+
+We have a problem. if we run `npm run build:dev` to run our development server, we can notice that the size of our `app.js` file is 2.4MB. It's HUGE!!
+This is because we are importing everything that we don't need.
+
+Instead, we can do
+`import 'core-js/features/promise';`.
+We can now notice that it's about half the size, 1.2MB.
+We are importing only what we need which is good, but not ideal due to having to import manually.
+
+We can configure our `webpack` to automatically import polyfill
+##### [webpack.config.js]
+```javascript
+const path = require('path');
+const CleanPlugin = require('clean-webpack-plugin');
+
+module.exports = {
+  mode: 'development',
+  entry: './src/app.js',
+  (...)
+  module: {
+    rules: [
+      {
+        test: /\.m?js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: [
+              [
+                '@babel/preset-env',
+                {
+                  targets: 'defaults',
+                  useBuiltIns: 'usage',
+                },
+              ],
+            ],
+          },
+        },
+      },
+    ],
+  },
+  plugins: [new CleanPlugin.CleanWebpackPlugin()],
+};
+
+};
+```
+
+By having `useBuiltIns: 'usage'`, we let babel to automatically import the needed polyfill.
+We also need another package: [regenerator-runtime](https://www.npmjs.com/package/regenerator-runtime)
+
+```bash
+npm i regenerator-runtime
+```
+
+##### [webpack.config.js]
+```javascript
+(...)
+{
+    targets: 'defaults',
+    useBuiltIns: 'usage',
+    corejs: { version: 3 },
+},
+(...)
+```
+
+We specifically tell babel to use version 3 of `corejs` since there was a big change from version 2.
