@@ -31,7 +31,8 @@
 
 ### HTML
 * [template tag](./front-end/HTML/templateTag.md) - using `template` tag to set up "to be used" HTML code.
-* * [Load Scripts dynamically](./front-end/HTML/loadScriptDynamically.md) - Use JavaScript to add `script` dynamically instead of manually adding into HTML file.
+  * [Load Scripts dynamically](./front-end/HTML/loadScriptDynamically.md) - Use JavaScript to add `script` dynamically instead of manually adding into HTML file.
+  * [Check if such tag is supported](./front-end/HTML/tagSupported.md) - Use JavaScript to check if such tag is supported in older browser (using `if/else`).
 
 ### JavaScript
 * [Modify an object](./front-end/JavaScript/modifyObject.md) - add, modify, deleting properties in an object. Dynamic property assignment.
