@@ -59,3 +59,7 @@ const user = {
 };
 user[uid] = 'p3';
 ```
+
+## Iterators
+
+...
