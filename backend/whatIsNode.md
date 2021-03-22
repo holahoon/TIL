@@ -70,3 +70,56 @@ server.listen(3000); // port 3000
 
 If we open up http://localhost:3000, it will show `Hello there! from the server`.
 
+We need to tell the browser what kind of "content" we are passing from the server.
+Say we are passing an h1 tag
+
+```javascript
+(...)
+const server = http.createServer((request, response) => {
+  response.setHeader('Content-Type', 'text/html'); // header identifier, value
+  response.write('<h1>Hello! This is from the server!</h1>');
+  response.end();
+});
+
+server.listen(3000); // port
+```
+
+We need to set the header's `Content-Type` to `'text/html'` so that the browser doesn't "guess" what kind of data it is.
+
+#### More advanced example
+
+```javascript
+const http = require('http');
+
+const server = http.createServer((request, response) => {
+  let body = []; // received as chunks of data
+
+  // receive each data
+  request.on('data', (chunk) => {
+    body.push(chunk);
+  });
+
+  // in the point of time when done receiving data
+  request.on('end', () => {
+    body = Buffer.concat(body).toString();
+
+    let userName = 'Unknown User';
+    if (body) userName = body.split('=')[1];
+
+    response.setHeader('Content-Type', 'text/html'); // header identifier, value
+    response.write(
+      `<h1>${userName}</h1><form method="POST" action="/"><input name="username" type="text" /><button type="submit">submit</button></form>`
+    );
+    response.end();
+  });
+});
+
+server.listen(3000); // port
+```
+
+We can even create a form that takes in some values in the input and a button to submit the form. When the user inputs some values in the input field, it receives the "data" and we push it into an array. This is how it works though. Then, we use `Buffer` and concat the `body` array and convert it into string.
+If I type in "David", it the body will take the name of the input and return `username=David`. Since we split it by `=` and take index 1, it will only show `David`.
+Now we take that value and insert it to the h1 tag.
+In the browser, once we submit the form, it will change the h1 tag from "Unknown User" to "David".
+
+Well, this is too cumbersome. This is where ExpressJS comes in super handy.
