@@ -96,6 +96,14 @@
 
 ## 🧩 General Knowledge
 
+#### Testing
+
+* [Testing](./general-knowledge/Testing/intro-to-test.md) - Introduction to Testing.
+
+#### Data Structures
+
+* [Introduction](./general-knowledge/Data-Structures/introduction.md) - Introduction Data Structures. 
+
 #### Front-end Knowledge
 
 * [Front-end Common Sense](./general-knowledge/Front-end-knowledge/front-endCommonSense.md)
