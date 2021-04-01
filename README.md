@@ -8,11 +8,14 @@
 
 ## 📝 Categories
 
-* **Front-end**
+* **FrontEnd**
+  * [HTML](#HTML)
   * [JavaScript](#javascript)
   * [TypeScript](#typescript)
   * [React](#react)
   * [Redux](#redux)
+* **BackEnd**
+  * [Node](#Node)
 * **Tools**
   * [Github](#github)
   * [Git](#git)
@@ -28,7 +31,12 @@
 
 ## 🙌 Front-end
 
-#### JavaScript
+### HTML
+* [template tag](./front-end/HTML/templateTag.md) - using `template` tag to set up "to be used" HTML code.
+  * [Load Scripts dynamically](./front-end/HTML/loadScriptDynamically.md) - Use JavaScript to add `script` dynamically instead of manually adding into HTML file.
+  * [Check if such tag is supported](./front-end/HTML/tagSupported.md) - Use JavaScript to check if such tag is supported in older browser (using `if/else`).
+
+### JavaScript
 * [Modify an object](./front-end/JavaScript/modifyObject.md) - add, modify, deleting properties in an object. Dynamic property assignment.
 * [Copy an object](./front-end/JavaScript/copyObject.md) - copy an object using spread operator or Object.assign along with deep(nested) copy.
 * [Object destructuring]() - destructurting an object.
@@ -43,8 +51,58 @@
   * [Understanding `getters` and `setters`](./front-end/JavaScript/understandGetterAndSetter.md) - times when a property can be set or to get(retrieve) it.
   * [Class Inheritance](./front-end/JavaScript/classInheritance.md) - Inherit class
   * [Class Private Fields, Properties and Methods](./front-end/JavaScript/classPrivateProperties.md) - Class private properties
+  * [Constructor Functions](./front-end/JavaScript/constructorFunctions.md) - how `contructor(){}` works in class pretty much.
+  * [Prototypes](./front-end/JavaScript/prototypes.md) - continues using [constructor functions](./front-end/JavaScript/constructorFunctions.md)
+  * [Methods in Classes & in Constructors](./front-end/JavaScript/methodsInClasses.md) - Declaring methods in a class and constructor. Summary of contructor funtions and methods as well.
+  
+##### DOM & Browser APIs
+* [dataset](./front-end/JavaScript/DOM_and_browser/dataset.md) - Access data-* Attributes
 
-#### TypeScript
+##### Working with events
+* [Browser Events](./events/../front-end/JavaScript/events/browserEvents.md) - working with events (addEventListener, removeEventListener).
+* [Basic infinite scrolling](./front-end/JavaScript/events/basicInfiniteScroll.md) - an example to create a basic infinite scrolling
+* [Scrolling Events Tips](./front-end/JavaScript/DOM_and_browser/scrollingEvents.md) - Some tips to know when scrolling.
+* [Event Propagation](./front-end/JavaScript/events/eventPropagation.md) - event propagation.
+
+##### Functions
+* [Pure functions & Side-effects](./front-end/JavaScript/functions/pureFunctions.md) - What is "pure" function without "side effects"
+* [Factory functions](./front-end/JavaScript/functions/pureFunctions.md) - A function that returns a new object.
+* [Closures](./front-end/JavaScript/functions/closures.md) - Every function in JavaScript is a closure.
+* [Recursion](./front-end/JavaScript/functions/recursion.md) - What is recursion? - a function that returns itself. whuuutttt
+
+##### Strings
+* [Tagged Template Literals](./strings/../front-end/JavaScript/strings/taggedTemplate.md) - This is a pretty interesting string using template literals.
+* [Regex](./front-end/JavaScript/strings/regex.md) - Regular Expression.
+
+##### HTTP Requests
+* [Getting Started with HTTP](./front-end/JavaScript/http/gettingStartedWithHTTP.md) - Let's get started with HTTP request / response 
+* [Xml Http Request](./front-end/JavaScript/http/xmlHttpRequest.md) - Using XML Http Request (XMLHttpRequest).
+* [fetch API](./front-end/JavaScript/http/fetchApi.md) - Using fetch() API to handle http request.
+* [Axios Library](./front-end/JavaScript/http/axios.md) - Using Axios library to make fetching so much easier.
+
+##### Async, Promises and Callbacks
+* [Asynchronous & Synchronous](./front-end/JavaScript/async_promises_callbacks/asyncAndSync.md) - Asynchronous & Synchronous code and Event Loop.
+* [Promises](./front-end/JavaScript/async_promises_callbacks/promises.md) - Promises to avoid callback hell when working with asynchronous code.
+* [Promise.all & Promise.race etc]() - In different cases when in need to be more dynamic - `all`, `race`, `allSettled`.
+* [Async / Await function](./front-end/JavaScript/async_promises_callbacks/asyncAndAwait.md) - Async and Await function when working with asynchronous code.
+
+##### Modular & Tooling & Workflows
+* [Modules(Modular)](./front-end/JavaScript/modules/modules.md) - Getting started with modules and `globalThis` (lazyload).
+* [Getting Started with tools](./front-end/JavaScript/modules/tools.md) - Get Started with **npm**, **ESLint** and **Wbpack**
+  * [npm](./front-end/JavaScript/modules/npm.md) - Get started with npm.
+  * [ESLint](./front-end/JavaScript/modules/eslint.md) - Get started with ESLint.
+  * [Webpack](./front-end/JavaScript/modules/webpack.md) - Get started with Webpack.
+
+##### Browser Storage
+* [What is Browser Storage](./front-end/JavaScript/browser_storage/what_is_browser_storage.md) - Getting started with browser storage. `localStorage` & `sessionStorage`, `cookies`, `indexDB`.
+
+##### Browser Support
+* [Feature Detection + Fallback Code & Using Polyfills or Transpilation](./front-end/JavaScript/browser_support/feature_detection.md) - Browser Support: detect features and make fallback code. Also use polyfills. Or **Transpile Code**.
+
+##### Meta-Programming ( *Not Finished* )
+* [What is meta-programming](./front-end/JavaScript/meta_programming/whatisMetaPro.md) - Symbols, Iterators & Generators, Reflex API, Proxy API.
+
+### TypeScript
 
 * [Get Started with TS](./front-end/TypeScript/getStartedWithTS.md)
 * [Generics in TS](./front-end/TypeScript/genericsInTS.md)
@@ -55,12 +113,12 @@
   * [TS with React useReucer](./front-end/TypeScript/reactUseReducerTS.md)
   * [TS with React Context API](./front-end/TypeScript/reactContextTS.md)
 
-#### React
+### React
 
 * [React Performance Optimization](./front-end/React/reactPerformanceOpti.md) - In times when in need of **not** using `pagination` or `virtualization` but rather need to render a **chunk of components at once**.
 * [When to use React.useCallback and React.useMemo](front-end/React/useCallbackAnduseMemo.md) - Diving deep into when to use React.useCallback or React.useMemo.
 
-#### Redux
+### Redux
 
 * **Redux Middleware**
   * [What is middleware](./front-end/Redux/reduxMiddleware/whatIsMiddleware.md) - 미들웨어의 기본 지식
@@ -78,19 +136,27 @@
 
 * [json-server](./front-end/ETC/jsonServer.md) - 로컬 환경에 가짜 API 서버 를 만들기 위한 도구 - went over how to use React.js with json-server along with CORS and Proxy.
 
+## 🙌 Backend
+
+### NodeJS
+* [Basic NodeJS](./backend/node/basic.md) - A simple introduction to NodeJS
+
+### ExpressJS
+* [Basic Express](./backend/express/basic.md) - A simple introduction to ExpressJS
+
 ## 🔧 Tools
 
-#### Github
+### Github
 * [Create a personal access token](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/creating-a-personal-access-token) - HTTPS 로 repo를 clone 할 경우 two-step authentication에 필요한 토큰을 받는 방법
 
-#### Git
+### Git
 
-#### CLI
+### CLI
 
 * [Terminal Commands](./tools/CLI/terminalCommands.md) - Terminal commands list
 * [NVM](./tools/CLI/nvm.md) - Node Version Manager
 
-#### VSCode
+### VSCode
 
 * [User Snippet](./tools/VSCode/userSnippet.md)
 
@@ -105,6 +171,7 @@
 * [Introduction](./general-knowledge/Data-Structures/introduction.md) - Introduction Data Structures. 
 
 #### Front-end Knowledge
+### Front-end Knowledge
 
 * [Front-end Common Sense](./general-knowledge/Front-end-knowledge/front-endCommonSense.md)
 
@@ -117,7 +184,7 @@
 
 ## 🧑🏻‍💻 Algorithm
 
-#### JavaScript Algorithm
+### JavaScript Algorithm
 
 * [JavaScript Algorithm](./algorithm/JavaScriptAlgorithm.md)
 

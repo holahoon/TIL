@@ -44,3 +44,4 @@ App.init();
 ```
 
 This `static` keyword allows to directly use the class without instantiating.
+Neither static methods nor static properties can be called on instances of the class. Instead, they're called on the class itself. 
