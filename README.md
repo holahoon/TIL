@@ -182,6 +182,8 @@
 #### JavaScript Knowledge
 * [JavaScript Common Sense](./general-knowledge/JavaScript-knowledge/javaScriptCommonSense.md) - 이벤트 루프, 동기/비동기, 호이스팅, 스코프, 클로저, this, 화살표 함수, 이벤트
 * [Function Expression & Declaration](./general-knowledge/JavaScript-knowledge/function-exp-dec.md) - 3 distinct types of function.
+* [Event Loop](./general-knowledge/JavaScript-knowledge/event-loop.md) - clear understanding of event loop.
+* [Microtasks, Macrotasks and queueMicrostask](./general-knowledge/JavaScript-knowledge/micro-macro-tasks.md) - let's take a look at what micro and macro tasks are.
 
 ## 🧑🏻‍💻 Algorithm
 

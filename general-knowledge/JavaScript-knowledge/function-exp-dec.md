@@ -65,3 +65,5 @@ var addValues = function addFunction(param1, param2){
 ```
 
 Notice that the above function **NOT** anonymous function anymore and its got a name `addFunction`.
+
+> In case if you need to support IE 8 for whatever reason, it's best to stick with anonymous function expression or function declaration.
