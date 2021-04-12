@@ -178,7 +178,8 @@
 #### Web Knowledge
 
 * [Web Common Sense](./general-knowledge/Web-knowledge/webCommonSense.md)
-* [HTTPS]() - what is HTTPS?
+* [HTTPS](./general-knowledge/Web-knowledge/https.md) - what is HTTPS?
+* [CORS](./general-knowledge/Web-knowledge/cors.md) - Cross-Origin Resource Sharing
 
 #### JavaScript Knowledge
 * [JavaScript Common Sense](./general-knowledge/JavaScript-knowledge/javaScriptCommonSense.md) - 이벤트 루프, 동기/비동기, 호이스팅, 스코프, 클로저, this, 화살표 함수, 이벤트
