@@ -189,7 +189,11 @@
 
 ## 🧑🏻‍💻 Algorithm
 
-### JavaScript Algorithm
+#### Algorithm Knowledge
+
+* [Brute Force](./algorithm/knowledge/brute_force.md)
+
+#### JavaScript Algorithm Examples
 
 * [JavaScript Algorithm](./algorithm/JavaScriptAlgorithm.md)
 
