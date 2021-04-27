@@ -1,7 +1,5 @@
 # Execution Context
 
-[reference](https://medium.com/@happymishra66/execution-context-in-javascript-319dd72e8e2c)
-
 #### Execution Context (EC)
 is defined as the environment in which the JS is executed. By enviroment - meaning the value of `this`, *variables, objects,* and *functions* JavaScript code has access to at a particular time.
 
@@ -277,3 +275,50 @@ With the above concepts, it's easier to understand how **hoisting** works in Jav
 
 The scope chain is a list of all the variable objects of functions inside which the current function exists. Scope chain also consists of the current funciton execution object.
 
+```javascript
+a = 1;
+
+var b = 2;
+
+cFunc = function(e){
+    var c = 10;
+    var d = 15;
+
+    console.log(c);
+    console.log(d);
+
+    function dFunc(){
+        var f = 5;
+        console.log(f);
+        console.log(c);
+        console.log(a);
+    }
+
+    dFunc();
+}
+
+cFunc(10);
+```
+
+When `cFunc` is called from the global execution context, the scope chain of `cFunc` will look like as follows:
+```
+Scope chain of cFunc = [ cFunc variable object, Global Execution Context variable object]
+```
+
+When `dFunc` is called from `cFunc`, as `dFunc` is inside `cFunc`, `dFunc`'s scope chain consists of `dFunc` variable object, `cFunc` variable object and **global execution context** variable object.
+```
+Scope chain of dFunc = [dFunc variable object,
+                        cFunc variable object,
+                        Global execution context variable object]
+```
+
+- When trying to access `f` inside `dFunc`, JS engine checks if `f` is available inside `dFunc`'s variable object. If it finds `f`'s value, it `console.log` `f`'s value.
+- When trying to access variable `c` inside `dFunc`, Js engine checks if `c` is available inside `dFunc`'s variable object. If the variable is not available, then it will move to `cFunc` variable object.
+- As variable `c` is not available inside `dFunc`'s variable object, JS engine moves to `cFunc`'s variable object. As `c` is available on `cFunc` variable object, it will `console.log` `c`'s value.
+- When trying to log `a`'s value inside `dFunc`, JS engine will check if `a` is available inside `dFunc`'s variable object. If `a` is not available inside `dFunc`'s variable object, it will move to the next item in scope chain i.e. `cFunc`'s variable object. JS engine will check if `cFunc`'s variable object as variable `a`. Here, variable `a` is not available on `cFunc`'s variable object, hence it will check the next items in `dFunc`'s scope chain i.e. **global execution context** variable object. Here `a` is available on `dFunc`'s variable object and it will `console.log` `a`'s value.
+
+It goes the same as for `cFunc`, Js engine will find variable `a`'s value from global execution object.
+
+`cFunc` doesn't know that variable `f` exists. So if we try to access `f` from `cFunc`, it will give an error. But, `dfunc` function does have access to `c` and `d` variable using the scope chain.
+
+This post was literally copied from a [medium article](https://medium.com/@happymishra66/execution-context-in-javascript-319dd72e8e2c)
