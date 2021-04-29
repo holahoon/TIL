@@ -196,7 +196,8 @@
 
 #### JavaScript Algorithm Examples
 
-* [JavaScript Algorithm](./algorithm/JavaScriptAlgorithm.md)
+* [Array problems](./algorithm/problems/array.md)
+* [String problems](./algorithm/problems/string.md)
 
 ## License
 
