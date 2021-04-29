@@ -1,8 +1,6 @@
-# Algorithm examples
+# Using hashmap
 
-## Array
-
-#### 1.1 Removing duplicates of an array and returning an array of only unique elements
+### 1.1 Removing duplicates of an array and returning an array of only unique elements
 
 ```javascript
 const duplicatedArray = [1, 2, 3, 5, 1, 5, 9, 1, 2, 8];
@@ -45,7 +43,7 @@ The [hasOwnProperty()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/R
 
 ---
 
-#### 1.2 Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
+### 1.2 Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
 
 You may assume that each input would have exactly one solution, and you may not use the same element twice.
 
