@@ -196,9 +196,9 @@
 
 #### JavaScript Algorithm Examples
 
-* [Array problems](./algorithm/problems/array.md)
-  * [hashmap]()
-  * [two pointers]()
+* **Array problems**
+  * [hashmap](./algorithm/problems/hashmap/hashmap.md)
+  * [two pointers](./algorithm/problems/two-pointers/twoPointers.md)
 * [String problems](./algorithm/problems/string.md)
 
 ## License
