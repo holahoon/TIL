@@ -103,3 +103,74 @@ After `getUser()` function gets invoked(ran), the `getUser execution context` is
 
 So, as we know that JavaScript is a single-threaded, it only handles one task at a time.
 Whenever a function is invoked, a new `execution context` is created and added to the `execution stack`. Then whenever a function is finished running through both the creation phase and execution phase, it is popped off the execution stack.
+
+### Further example
+
+Let's take a look at an example.
+
+```javascript
+var name = 'DK'
+var occupation = 'Web dev'
+
+function getUser(arg) {
+    var message = 'ftw!'
+    return arg + message
+}
+
+getUser(occupation)
+```
+
+So the JS engine execution is as follows:
+
+Creates a `global execution context`, then it goes:
+##### GEC creation phase
+In here, it creates the `window: global object`, `this: window`, `name: undefined`, `occupation: undefined`, `getUser: fn()`.
+
+##### GEC execution phase
+Then in here, `window: global object`, `this: window` stays the same. The variables get its own values - `name: 'DK'`, `occupation: 'Web dev'` and `getUser: fn()` pretty much is the same.
+
+##### FEC(getUser execution phase) creation phase
+`getUser(occupation)` gets invoked. In the FEC creation phase, it has `arguments: {0: "Web dev", length: 1}`, `this: window`, `message: undefined` - which this is a local variable which gets hoisted, `arg: 'Web dev'`.
+
+##### FEC(getUser execution phase) execution phase
+The only thing that changes now is the local variable `message: 'ftw!'` and then returns its appropriate value.
+
+Now, `getUser()` gets popped off of execution stack after the function runs.
+
+### Scope
+
+Well, this brings us to the topic of `scope`.
+By definition, scope is **the current context of execution**.
+
+```javascript
+function foo(){
+    var bar = 'declared in foo()'
+}
+
+foo()
+
+console.log(bar)
+```
+
+We all know that this will log an reference error. But why? Just because variable `bar` is inside the `foo()` function scope? Well, there' much more than that. =)
+
+So we know how the execution happens: `GEC creation phase` -> `GEC execution phase` -> `FEC creation phase` -> `FEC execution phase`.
+By the time the JS engine goes to `console.log(bar)`, the function `foo()` has already been popped off the execution stack. So obviously, `foo()`'s execution context is already over/gone.
+
+Say we have a code like
+
+```javascript
+var name = 'DK'
+
+function logName(){
+    console.log(name)
+}
+
+logName()
+```
+
+Well, we know `GEC creation phase` -> `GEC execution phase` -> `FEC creation phase` -> `FEC execution phase`.
+
+Now once JS engine goes into FEC execution phase, it will console log `name` and will notice that `logName` function does NOT have a local variable `name`. So what it'll do is then it will look at its nearest parent's execution context and see if `name` exists.
+
+This is the concept of `scope` or `scope chain`. It looks for its nearest parent's execution scope to see if the propert exists.
