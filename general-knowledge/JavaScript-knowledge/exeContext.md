@@ -1,5 +1,7 @@
 # Execution Context
 
+Big shoutout to [uidodev - youtube](https://www.youtube.com/watch?v=Nt-qa_LlUH0)
+
 When JavaScript engine runs your code, it creates an execution context.
 
 ### Global Execution Context
@@ -174,3 +176,26 @@ Well, we know `GEC creation phase` -> `GEC execution phase` -> `FEC creation pha
 Now once JS engine goes into FEC execution phase, it will console log `name` and will notice that `logName` function does NOT have a local variable `name`. So what it'll do is then it will look at its nearest parent's execution context and see if `name` exists.
 
 This is the concept of `scope` or `scope chain`. It looks for its nearest parent's execution scope to see if the propert exists.
+
+### Closure
+
+```javascript
+var count = 0
+
+function makeAdder(x) {
+    return function innerFn(y) {
+        return x + y
+    }
+}
+
+var add5 = makeAdder(5)
+count += add5(10)
+// 15
+```
+
+After the `FEC` - `makeAdder execution context` is over (execution phase), and when a function **returns** a function (nested function), the inner function creates a **`closure scope`** over the parent execution context.
+
+Normally after the completion of `FEC`, it is removed from execution stack, but it turns into a closure scope as long as the function returns another function (like above).
+
+So when JS engine goes into `FEC` - `innerFn execution context`, it doesn't know what `x` is, so it looks to its closest parent scope (which this case is the `closure scope`), and cna get access to the variable `x` since it still has access to the parent context.
+
