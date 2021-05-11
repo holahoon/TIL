@@ -219,7 +219,6 @@
 * [Function Expression & Declaration](./general-knowledge/JavaScript-knowledge/function-exp-dec.md ) - 3 distinct types of function.
 * [Event Loop](./general-knowledge/JavaScript-knowledge/event-loop.md ) - clear understanding of event loop.
 * [Microtasks, Macrotasks and queueMicrostask](./general-knowledge/JavaScript-knowledge/micro-macro-tasks.md ) - let's take a look at what micro and macro tasks are.
-* [Execution Context](./general-knowledge/JavaScript-knowledge/exeContext.md) - execution context - related to hoisting, closures and scopes.
   
 ##  🧑🏻‍💻 Algorithm
   
