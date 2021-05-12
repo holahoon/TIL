@@ -187,6 +187,7 @@
 * [Event Loop](./general-knowledge/JavaScript-knowledge/event-loop.md) - clear understanding of event loop.
 * [Microtasks, Macrotasks and queueMicrostask](./general-knowledge/JavaScript-knowledge/micro-macro-tasks.md) - let's take a look at what micro and macro tasks are.
 * [Execution Context](./general-knowledge/JavaScript-knowledge/exeContext.md) - execution context - related to hoisting, closures and scopes.
+  * [Closure example](./general-knowledge/JavaScript-knowledge/closureEx.md) - Let's take a deeper look at closure using `var` and `let` in a `for loop`.
 
 ## 🧑🏻‍💻 Algorithm
 
