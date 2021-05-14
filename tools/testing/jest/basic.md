@@ -209,30 +209,71 @@ const fn = require('./fn');
  * - beforeAll()
  * - afterAll()
  */
-let user;
+// let user;
 
-// beforeEach(async () => {
+// beforeAll(async () => {
 //   user = await fn.connectUserDB();
 // });
-
-// afterEach(() => {
+// afterAll(() => {
 //   return fn.disconnectUserDB();
 // });
-beforeAll(async () => {
-  user = await fn.connectUserDB();
-});
-afterAll(() => {
-  return fn.disconnectUserDB();
-});
 
-test('name should be DK', () => {
-  expect(user.name).toBe('DK');
-});
+// test('name should be DK', () => {
+//   expect(user.name).toBe('DK');
+// });
 
-test('age should be 31', () => {
-  expect(user.age).toBe(31);
-});
+// test('age should be 31', () => {
+//   expect(user.age).toBe(31);
+// });
 
-test('gender sould be male', () => {
-  expect(user.gender).toBe('male');
+// test('gender sould be male', () => {
+//   expect(user.gender).toBe('male');
+// });
+
+/**
+ * Let's take a look at a when connecting and disconnecting with a DB
+ * We want to separate each DB tests
+ */
+
+// describe('A car I want to buy', () => {
+//   let car;
+
+//   beforeAll(async () => {
+//     car = await fn.connectCarDB();
+//   });
+//   afterAll(() => {
+//     return fn.disConnectCarDB;
+//   });
+
+//   test('brand should be BMW', () => {
+//     expect(car.brand).toBe('BMW');
+//   });
+//   test('name should be Z4', () => {
+//     expect(car.name).toBe('Z4');
+//   });
+//   test('color should be red', () => {
+//     expect(car.color).toBe('red');
+//   });
+// });
+
+/**
+ * If I only want to test a specific unit
+ * - Use `.only` after test
+ * - Use `.skip` to skip the test
+ */
+
+let num = 0;
+
+test('0 + 1 is 1', () => {
+  expect(fn.add(num, 1)).toBe(1);
+});
+test('0 + 2 is 2', () => {
+  expect(fn.add(num, 2)).toBe(2);
+});
+test.skip('0 + 3 is 3', () => {
+  expect(fn.add(num, 3)).toBe(3);
+  num = 10;
+});
+test.only('0 + 4 is 4', () => {
+  expect(fn.add(num, 4)).toBe(4);
 });
