@@ -12,6 +12,10 @@ Run `npx jest --watchAll` to watch all of the changes that happen in your JS fil
 If you just run `npx jest`, it only runs the test at that moment.
 One tip to know when you have `console logs` in your code, you can run `npx jest --silent` so that it won't print out any logs.
 
+Or just by configuring our `package.json` file, and replace `"test": "jest"`.
+This will allow you to just run `npm test -- --watchAll`. Don't forget that double hyphens. As a shortcut, you can also just `npm t` instead of `test` fyi.
+
+
 An advantage of TDD by unit testing is that if we have a code that returns the length of the argument + woof!
 ```javascript
 [woof.js]
