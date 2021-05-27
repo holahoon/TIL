@@ -167,7 +167,7 @@
 #### Testing
 
 * [Testing](./general-knowledge/Testing/intro-to-test.md) - Introduction to Testing.
-* [Basic testing using Jest]()
+* [Testing using Jest](./general-knowledge/Testing/testingWithJest.md) - Testing using Jest
 
 #### Data Structures
 
