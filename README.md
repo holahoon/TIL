@@ -167,7 +167,8 @@
 #### Testing
 
 * [Testing](./general-knowledge/Testing/intro-to-test.md) - Introduction to Testing.
-* [Testing using Jest](./general-knowledge/Testing/testingWithJest.md) - Testing using Jest
+* [Testing using Jest](./general-knowledge/Testing/testingWithJest.md) - Testing using Jest.
+* [Async functions using Jest](./general-knowledge/Testing/asyncFuncJest.md) - Mocking async functions using Jest.
 
 #### Data Structures
 
