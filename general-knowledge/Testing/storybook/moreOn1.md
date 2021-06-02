@@ -154,3 +154,16 @@ export default {
 
 This `decorators` is an array of function that automatically receives the story as its argument.
 Now, we can remove the `Center` wrapper from the `Button` component and it still works as we expect it to be.
+
+If we need to add the same style (center) globally, we just need to configure it in `./storybook/preview.js`.
+
+```javascript
+import { addDecorator } from '@storybook/react';
+
+import Center from '../src/components/Center/Center';
+(...)
+addDecorator((story) => <Center>{story()}</Center>);
+```
+
+This wraps the `Center` component around all of the stories globally.
+we now can remove the `decorators: [(story) => <Center>{story()</Center>}]` from `Button.stories.js` file.
