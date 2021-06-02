@@ -86,3 +86,71 @@ export default {
 ```
 
 This `args` will set as default and can be overwritten individually.
+
+## Decorators
+
+Decorators are components that wrap a story.
+If we want to decorate the rendered components in the storybook, we can use decorators using CSS.
+
+We first create a wrapper components
+
+```javascript
+// [ components/Center/Center.js ]
+import './Center.css';
+
+export default function Center(props) {
+  return <div className='center'>{props.children}</div>;
+}
+```
+
+```css
+/* [ components/Center/Center.css ] */
+.center {
+  display: flex;
+  justify-content: center;
+}
+```
+
+Then we import that `Center` component and wrap it around the desired components.
+In our case the `Button.stories.js`
+
+```javascript
+//...
+export const Primary = () => (
+  <Center>
+    <Button variant='primary'>Primary</Button>
+  </Center>
+);
+export const Secondary = () => (
+  <Center>
+    <Button variant='secondary'>Secondary</Button>
+  </Center>
+);
+export const Success = () => (
+  <Center>
+    <Button variant='success'>Success</Button>
+  </Center>
+);
+export const Danger = () => (
+  <Center>
+    <Button variant='danger'>Danger</Button>
+  </Center>
+);
+```
+
+Or we can just set a default,
+
+```javascript
+// component story format
+export default {
+  title: 'form/control/Button', // mandatory and should be unique
+  component: Button,
+  args: {
+    children: 'Button',
+  },
+  decorators: [(story) => <Center>{story()}</Center>], // each el in the array is a function that auto receives the story as its argument
+};
+```
+
+This `decorators` is an array of function that automatically receives the story as its argument.
+Now, we can remove the `Center` wrapper from the `Button` component and it still works as we expect it to be.
