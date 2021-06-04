@@ -189,7 +189,8 @@
 #### Testing using Storybook
 
 - [Getting started](./general-knowledge/Testing/storybook/gettingStarted.md) - Getting started with Storybook (setup and basic).
-- [More on Storybook](./general-knowledge/Testing/storybook/moreOn1.md) - Writing story within story, using args, decorators.
+- [More on Storybook 1](./general-knowledge/Testing/storybook/moreOn1.md) - Writing story within story, using args, decorators.
+- [More on Storybook 2](./general-knowledge/Testing/storybook/moreOn2.md) - Addons
 
 #### Data Structures
 

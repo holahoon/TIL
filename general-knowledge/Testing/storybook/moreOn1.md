@@ -170,8 +170,12 @@ we now can remove the `decorators: [(story) => <Center>{story()</Center>}]` from
 
 ## Theming
 
-Let's use [Chakra UI](https://chakra-ui.com/docs/getting-started)
+> Using Chakra UI with Storybook at `npm i @chakra-ui/react @emotion/react@^11 @emotion/styled@^11 framer-motion@^4` seems like it doesn't properly work with Storybook.
+
+Let's use [Chakra UI](https://chakra-ui.com/docs/getting-started) to theme.
 
 ```bash
 $ yarn add @chakra-ui/react @emotion/react@^11 @emotion/styled@^11 framer-motion@^4
 ```
+
+... TBU
