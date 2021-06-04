@@ -167,3 +167,11 @@ addDecorator((story) => <Center>{story()}</Center>);
 
 This wraps the `Center` component around all of the stories globally.
 we now can remove the `decorators: [(story) => <Center>{story()</Center>}]` from `Button.stories.js` file.
+
+## Theming
+
+Let's use [Chakra UI](https://chakra-ui.com/docs/getting-started)
+
+```bash
+$ yarn add @chakra-ui/react @emotion/react@^11 @emotion/styled@^11 framer-motion@^4
+```
