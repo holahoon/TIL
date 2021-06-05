@@ -190,7 +190,7 @@
 
 - [Getting started](./general-knowledge/Testing/storybook/gettingStarted.md) - Getting started with Storybook (setup and basic).
 - [More on Storybook 1](./general-knowledge/Testing/storybook/moreOn1.md) - Writing story within story, using args, decorators.
-- [More on Storybook 2](./general-knowledge/Testing/storybook/moreOn2.md) - Addons
+- [More on Storybook 2](./general-knowledge/Testing/storybook/moreOn2.md) - Addons, Console Addons
 
 #### Data Structures
 

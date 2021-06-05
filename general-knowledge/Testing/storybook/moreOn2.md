@@ -62,3 +62,68 @@ If we check the `Button` component, we can now use radio button to toggle betwee
 Make sure that the name `variant` in the exported template matches the `argTypes`.
 
 The `onClick` event can be checked in the `Actions` panel.
+
+## Console Addon
+
+We first need to install storybook console addon
+
+```bash
+$ yarn add -D @storybook/addon-console
+```
+
+Then, import `@storybook/addon-console` in the storybook `preview.js` file.
+
+```javascript
+// [ .storybook/preview.js ]
+import '@storybook/addon-console';
+```
+
+Let's go to `Input.stories.js` file
+
+```javascript
+// [ Input.stories.js ]
+import Input from './Input';
+
+export default {
+  title: 'form/Input',
+  component: Input,
+};
+(...)
+
+// console addon
+export const Log = () => (
+  <Input
+    size='medium'
+    placeholder='Medium Sized input'
+    onChange={(e) => console.log(e.target.value)}
+  />
+);
+```
+
+As we type anything in the input, it will console log the value.
+
+If we want to see where the component is from, we need to configure `preview.js` file again.
+
+```javascript
+// [ .storybook/preview.js ]
+import { addDecorator } from '@storybook/react';
+import { withConsole } from '@storybook/addon-console';
+
+export const parameters = {
+  actions: { argTypesRegex: '^on[A-Z].*' },
+  controls: {
+    matchers: {
+      color: /(background|color)$/i,
+      date: /Date$/,
+    },
+  },
+  options: {
+    storySort: (a, b) =>
+      a[1].kind === b[1].kind ? 0 : a[1].id.localeCompare(b[1].id, undefined, { numeric: true }),
+  },
+};
+
+addDecorator((storyFn, context) => withConsole()(storyFn)(context)); // <--
+```
+
+If we now type values in the input, we can see that the console was logged from `form/Input/Log: "asdfas"`.
